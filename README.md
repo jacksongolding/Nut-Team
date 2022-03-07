@@ -8,12 +8,7 @@ Jackson, Lucas, Ŕithwikh, Samuel
 
 1. [Our Team](https://github.com/NinjaBreadLord/super-duper-bassoons/blob/main/README.md#our-team)
 2. [Pair-Share Journals](https://github.com/NinjaBreadLord/super-duper-bassoons/blob/main/README.md#pair-share-journals)
-3. [Week 0](https://github.com/NinjaBreadLord/super-duper-bassoons/blob/main/README.md#week-0)
-4. [Week 1](https://github.com/NinjaBreadLord/super-duper-bassoons/blob/main/README.md#week-1)
-5. [Week 2](https://github.com/NinjaBreadLord/super-duper-bassoons/blob/main/README.md#week-2)
-6. [Week 3](https://github.com/NinjaBreadLord/super-duper-bassoons/blob/main/README.md#week-3)
-7. [Week 4](https://github.com/NinjaBreadLord/super-duper-bassoons/blob/main/README.md#week-4)
-8. [Week 5](https://github.com/NinjaBreadLord/super-duper-bassoons/blob/main/README.md#week-5)
+
 
 
 ## Our Team
