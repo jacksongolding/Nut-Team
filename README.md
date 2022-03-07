@@ -2,7 +2,7 @@
 ## Project Idea: 
 
 
-Jackson, Lucas, Ŕithwikh , Samuel
+Jackson, Lucas, Ŕithwikh, Samuel
 
 ## Table of Contents
 
