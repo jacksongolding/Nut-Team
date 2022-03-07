@@ -1,10 +1,8 @@
-# Team Super-Duper-Bassoons
+# Nut-Team
 ## Project Idea: 
-Idea: Tea & Tee shop website ([Wireframe Ideation](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/10))
 
-Our website idea is a Tea and Tee shop where we can help people find T-shirts and tea that they want or need.
 
-Daniel, Jun, Everitt, Lucas, Ŕithwikh 
+Jackson, Lucas, Ŕithwikh 
 
 ## Table of Contents
 
