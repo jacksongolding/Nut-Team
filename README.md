@@ -2,7 +2,7 @@
 ## Project Idea: 
 
 
-Jackson, Lucas, Ŕithwikh 
+Jackson, Lucas, Ŕithwikh , Samuel
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ Jackson, Lucas, Ŕithwikh
 
 | Name | GitHub ID and Profile | Tasks | Scrum Board | Commits | Role | 
 |:-----|:----------------------|:-----:|:-----------:|:-------:|:-------:|
-| Jun Lim | [@the1jun](https://github.com/the1jun) [@peacekeeper6](https://github.com/peacekeeper6)| [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/the1jun) |[Scrum Board](https://github.com/NinjaBreadLord/super-duper-bassoons/projects/1) | [Commits](https://github.com/NinjaBreadLord/super-duper-bassoons/commits?author=peacekeeper6) | Deployment Manager
+|  | ]() | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/the1jun) |[Scrum Board]() | Deployment Manager
 | Ŕithwikh Várma| [@guapbeast](https://github.com/guapbeast) | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/guapbeast) |[Scrum Board](https://github.com/NinjaBreadLord/super-duper-bassoons/projects/1) | [Commits](https://github.com/NinjaBreadLord/super-duper-bassoons/commits?author=guapbeast) | Designer
 | Lucas Ho | [@lucasho22](https://github.com/lucasho22) | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/lucasho22) |[Scrum Board](https://github.com/NinjaBreadLord/super-duper-bassoons/projects/1) |[Commits](https://github.com/NinjaBreadLord/super-duper-bassoons/commits?author=lucasho22) | Scrum Master
 | Everitt Cheng | [@NinjaBreadLord](https://github.com/NinjaBreadLord) | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/NinjaBreadLord) |[Scrum Board](https://github.com/NinjaBreadLord/super-duper-bassoons/projects/1) |[Commits](https://github.com/NinjaBreadLord/super-duper-bassoons/commits?author=NinjaBreadLord)| GitHub Admin
