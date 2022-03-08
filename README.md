@@ -2,7 +2,7 @@
 ## Project Idea: 
 
 
-Jackson, Lucas, Ŕithwikh, Samuel
+Jackson (Scrum Master)(Deployment), Lucas(Design), Ŕithwikh(Github Admin), Samuel(TO)
 
 ## Table of Contents
 
