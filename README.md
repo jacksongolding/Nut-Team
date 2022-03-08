@@ -15,8 +15,8 @@ Jackson (Scrum Master)(Deployment), Lucas(Design), Ŕithwikh(Github Admin), Samu
 
 | Name | GitHub ID and Profile | Tasks | Scrum Board | Commits | Role | 
 |:-----|:----------------------|:-----:|:-----------:|:-------:|:-------:|
-| Ŕithwikh Várma| [@guapbeast](https://github.com/guapbeast) | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/guapbeast) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) | [Commits](https://github.com/NinjaBreadLord/super-duper-bassoons/commits?author=guapbeast) | 
-| Lucas Ho | [@lucasho22](https://github.com/lucasho22) | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/lucasho22) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/NinjaBreadLord/super-duper-bassoons/commits?author=lucasho22) | 
+| Ŕithwikh Várma| [@guapbeast](https://github.com/guapbeast) | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/guapbeast) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) | [Commits](https://github.com/jacksongolding/Nut-Team/commits?author=guapbeast) | 
+| Lucas Ho | [@lucasho22](https://github.com/lucasho22) | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/lucasho22) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/jacksongolding/Nut-Team/commits?author=lucasho22) | 
 | Jackson Golding | [@NinjaBreadLord](https://github.com/NinjaBreadLord) | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/NinjaBreadLord) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/NinjaBreadLord/super-duper-bassoons/commits?author=NinjaBreadLord)| 
 | Samuel Wang | [@dtsivkovski](https://github.com/dtsivkovski) | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/assigned/dtsivkovski) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/NinjaBreadLord/super-duper-bassoons/commits?author=dtsivkovski) | 
 ## Pair Share Journals
