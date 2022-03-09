@@ -19,9 +19,9 @@ Jackson (Scrum Master)(Deployment), Lucas(Design), Ŕithwikh(Github Admin), Samu
 | Lucas Ho | [@lucasho22](https://github.com/lucasho22) | [Tasks](https://github.com/jacksongolding/Nut-Team/issues/assigned/lucasho22) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/jacksongolding/Nut-Team/commits?author=lucasho22) | Designer
 | Jackson Golding | [@jacksongolding](https://github.com/jacksongolding) | [Tasks](https://github.com/jacksongolding/Nut-Team/issues/assigned/jacksongolding) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/jacksongolding/Nut-Team/commits?author=jacksongolding)| Deployment Manager
 | Samuel Wang | [@samuelwaang](https://github.com/samuelwaang) | [Tasks](https://github.com/jacksongolding/Nut-Team/issues/assigned/samuelwaang) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/jacksongolding/Nut-Team/commits?author=samuelwaang) | Technical Officer
-## Pair Share Journals
-### [Lucas, Ŕithwikh, and Jun's Pair-Share Journal](https://docs.google.com/document/d/1Mo2Scc3NmkeTiWN-pLBPexrsBTjY5X0mqlTHWC0ClTM/edit?usp=sharing)
-### [Everitt and Daniel's Pair-Share Journal](https://docs.google.com/document/d/1PeEx1YdkPbe1ykQ0fboJnTnEJBK2chOiKaOZaK73VcM/edit#)
+## Pair Share Journal Teams
+### [Lucas and Ŕithwikh]
+### [Samuel and Jackson]
 
 ## Week 0
 
