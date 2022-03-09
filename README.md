@@ -1,8 +1,12 @@
 # Nut-Team
 ## Project Idea: 
+yee
 
-
-Jackson (Scrum Master)(Deployment), Lucas(Design), Ŕithwikh(Github Admin), Samuel(TO)
+## Team Member Roles
+* Jackson (Scrum Master)(Deployment): Be the leader of the team. Make sure people understand what they are doing. Make sure they are on task. When commits are made and when changes are added, deploy the project so we don't have to go to replit or intellij to open the project. Maybe make sure people know some other roles just in case someone is absent.
+* Lucas(Design): Make the webpage look nice. Make sure runtime is easily accessible and that everything is in the same theme. Work with CSS. Help with create tasks and help do coding.
+* Ŕithwikh(Github Admin): Make sure everything on Github is clean and easily accessible. Make sure ReadMe is up to date, make sure stuff in the scrumboard is organized and up to date, and make sure issues are correct. Help with coding as well.
+* Samuel(TO)
 
 ## Table of Contents
 
