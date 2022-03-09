@@ -20,8 +20,8 @@ Jackson (Scrum Master)(Deployment), Lucas(Design), Ŕithwikh(Github Admin), Samu
 | Jackson Golding | [@jacksongolding](https://github.com/jacksongolding) | [Tasks](https://github.com/jacksongolding/Nut-Team/issues/assigned/jacksongolding) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/jacksongolding/Nut-Team/commits?author=jacksongolding)| Deployment Manager
 | Samuel Wang | [@samuelwaang](https://github.com/samuelwaang) | [Tasks](https://github.com/jacksongolding/Nut-Team/issues/assigned/samuelwaang) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/jacksongolding/Nut-Team/commits?author=samuelwaang) | Technical Officer
 ## Pair Share Journal Teams
-### [Lucas and Ŕithwikh]
-### [Samuel and Jackson]
+### Lucas and Ŕithwikh
+### Samuel and Jackson
 
 ## Week 0
 
