@@ -7,7 +7,7 @@ Jackson (Scrum Master)(Deployment), Lucas(Design), Ŕithwikh(Github Admin), Samu
 ## Table of Contents
 
 1. [Our Team](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#our-team)
-2. [Pair-Share Journals](https://github.com/NinjaBreadLord/super-duper-bassoons/blob/main/README.md#pair-share-journals)
+2. [Pair-Share Journals](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#pair-share-journal-teams)
 
 
 
