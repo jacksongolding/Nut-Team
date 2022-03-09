@@ -8,7 +8,8 @@ Jackson (Scrum Master)(Deployment), Lucas(Design), Ŕithwikh(Github Admin), Samu
 
 1. [Our Team](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#our-team)
 2. [Pair-Share Journals](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#pair-share-journal-teams)
-3. [Week 0](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#week-0)
+3. 2. [Pair-Share Journals](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#pair-share-journal-teams)
+4. [Week 0](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#week-0)
 
 
 
