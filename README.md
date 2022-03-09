@@ -1,6 +1,6 @@
 # Nut-Team
 ## Project Idea: 
-yee
+Display of Pandemic Data as well as information and guidelines from the CDC on the Coronavirus and managing the Pandemic. Use of API's to update data real-time.
 
 ## Team Member Roles
 * Jackson (Scrum Master)(Deployment): Be the leader of the team. Make sure people understand what they are doing. Make sure they are on task. When commits are made and when changes are added, deploy the project so we don't have to go to replit or intellij to open the project. Maybe make sure people know some other roles just in case someone is absent.
