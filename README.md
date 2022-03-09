@@ -32,6 +32,6 @@ Jackson (Scrum Master)(Deployment), Lucas(Design), Ŕithwikh(Github Admin), Samu
 | Name | Tasks | Commits |
 |:-----|:----------------------|:-----:|
 | Lucas Ho | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37) | |
-| Ŕithwikh Várma | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37) | [Fixed Routing of Webpage and Basic Design Stucture and Layout](https://github.com/NinjaBreadLord/super-duper-bassoons/commit/b4734501484a34a68a57cac094ef4fc0eaf682a9)
-| Jackson Golding | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37)  | [CNAME](https://github.com/NinjaBreadLord/super-duper-bassoons/commit/ff2b0e8890e4a8d7c90e3ad85cda8aea411a8c75) [Tangibles](https://github.com/NinjaBreadLord/super-duper-bassoons/commit/f17c8327432527ed7b0bd8c5f7431da268987b4b) |
-| Samuel Wang | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37) | [[Individual Review]](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/39), [[Database Alphabetization]](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/38) |
+| Ŕithwikh Várma | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37) | |
+| Jackson Golding | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37)  | |
+| Samuel Wang | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37) | |
