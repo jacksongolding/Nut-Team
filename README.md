@@ -31,7 +31,7 @@ Jackson (Scrum Master)(Deployment), Lucas(Design), Ŕithwikh(Github Admin), Samu
 
 | Name | Tasks | Commits |
 |:-----|:----------------------|:-----:|
-| Lucas Ho | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37) | |
-| Ŕithwikh Várma | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37) | |
-| Jackson Golding | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37)  | |
-| Samuel Wang | [Tasks](https://github.com/NinjaBreadLord/super-duper-bassoons/issues/37) | |
+| Lucas Ho | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) | |
+| Ŕithwikh Várma | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) | |
+| Jackson Golding | [Tasks](https://github.com/jacksongolding/Nut-Team/issues)  | |
+| Samuel Wang | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) | |
