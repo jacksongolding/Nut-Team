@@ -13,6 +13,7 @@ Display of Pandemic Data as well as information and guidelines from the CDC on t
 1. [Our Team](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#our-team)
 2. [Pair-Share Journals](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#pair-share-journal-teams)
 3. [Week 0](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#week-0)
+4. [Week 1](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#week-1)
 
 
 
