@@ -4,7 +4,7 @@ Display of Pandemic Data as well as information and guidelines from the CDC on t
 
 ## Team Member Roles
 * Jackson (Scrum Master)(Deployment): Be the leader of the team. Make sure people understand what they are doing. Make sure they are on task. When commits are made and when changes are added, deploy the project so we don't have to go to replit or intellij to open the project. Maybe make sure people know some other roles just in case someone is absent.
-* Lucas(Design): Make the webpage look nice. Make sure runtime is easily accessible and that everything is in the same theme. Work with CSS. Help with create tasks and help do coding.
+* Lucas(Design): Make the webpage look nice. Make sure runtime is easily accessible and that everything is in the same theme. Work with CSS. Help with create tasks and help do coding. Make things look appealing.
 * Ŕithwikh(Github Admin): Make sure everything on Github is clean and easily accessible. Make sure ReadMe is up to date, make sure stuff in the scrumboard is organized and up to date, and make sure issues are correct. Help with coding as well.
 * Samuel(TO): Figure out the coding for our website and do a good portion of the technicals. Make sure to ask teacher for help on coding that the group doesn't understand. 
 
