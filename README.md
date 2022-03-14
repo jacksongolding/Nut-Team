@@ -1,3 +1,5 @@
+{% include navigation.html %}
+
 # Nut-Team
 ## Project Idea: 
 Display of Pandemic Data as well as information and guidelines from the CDC on the Coronavirus and managing the Pandemic. Use of API's to update data real-time. Can also use APIs for real time numbers and trends of coronavirus. Also, if possible, we can have a page for updates with new strains of the virus or possibly new booster shots. There can also be a page for people to write about their experience with covid using a CRUD database. APIS for information about COVID and how many cases there are. There will be a CRUD for vaccine information, such as the first vaccine, second vaccine, and where to get the vaccine. Data structures used to organize data for our project.
