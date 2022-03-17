@@ -19,9 +19,10 @@ We are going to make a page related to school that is helpful for deciding class
 
 1. [Our Team](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#our-team)
 2. [Pair-Share Journals](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#pair-share-journal-teams)
-3. [Wireframes](https://github.com/jacksongolding/Nut-Team/wiki/Wireframes)
-4. [Week 0](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#week-0)
-5. [Week 1](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#week-1)
+3. [Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1)
+4. [Wireframes](https://github.com/jacksongolding/Nut-Team/wiki/Wireframes)
+5. [Week 0](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#week-0)
+6. [Week 1](https://github.com/jacksongolding/Nut-Team/blob/main/README.md#week-1)
 
 
 
