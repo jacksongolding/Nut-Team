@@ -2,7 +2,7 @@
 
 # Nut-Team
 ## Project Idea: 
-We are going to make a page related to school that is helpful for deciding classes. We will have people input their classes and the website will tell them what other classes they should take that are similar or follow the same path as the input. We could also make a page that gives student feedback on classes that can be used to determine if they actually want to take the class. Maybe also make something where the user can input the credits they have and the website can display classes for their remaining needed credits, which may have descriptions.
+We are going to make an APUSH website study tool and calendar for Mr. Swanson. We plan to make a calendar that will have the assignments, papers the students may need, and dates for everything. We also hope to make some sort of discussion board that people can ask questions on and others can answer these questions about APUSH. This will help everyone's learning. We can also make study tools such as things like timelines that people can practice on or quizzes for the units of APUSH. 
 
 
 ## Team Member Roles
