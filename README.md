@@ -49,6 +49,6 @@ We are going to make a page related to school that is helpful for deciding class
 | Name | Tasks | Commits |
 |:-----|:----------------------|:-----:|
 | Lucas Ho | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) | |
-| Ŕithwikh Várma | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) | |
+| Ŕithwikh Várma | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) | [Jekyll Page Development](https://github.com/guapbeast/flask_portfolio/commit/ecd9ec68cd264e3c2da4171d25e14934c6cfe53e) |
 | Jackson Golding | [Tasks](https://github.com/jacksongolding/Nut-Team/issues)  | |
 | Samuel Wang | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) | |
