@@ -1,3 +1,5 @@
+{% include navigation.html %}
+
 ### Home page wireframe
 ![home page](https://user-images.githubusercontent.com/89223557/159342888-e34b37f9-672a-4fb9-b641-028aea402582.jpg)
 
