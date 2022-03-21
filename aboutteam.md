@@ -1,3 +1,5 @@
+{% include navigation.html %}
+
 ## About Team
 
 | Name | GitHub ID and Profile | Tasks | Scrum Board | Commits | Role | 
