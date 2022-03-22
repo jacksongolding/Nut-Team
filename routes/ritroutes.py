@@ -9,7 +9,7 @@ app_ritroutes = Blueprint('ritroutes', __name__,
 
 @app_ritroutes.route('/home')
 def rithwikh():
-    return render_template("rithwikh/r_homepage.html")
+    return render_template("rithwikh/rithomepage.html")
 
 
 
