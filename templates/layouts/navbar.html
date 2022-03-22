@@ -6,15 +6,42 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-            <a class="nav-link" href={{ url_for('index') }}>Portfolio</a>
-            <a class="nav-link" href={{ url_for('kangaroos') }}>Kangaroos</a>
-            <a class="nav-link" href={{ url_for('walruses') }}>Walruses</a>
-            <a class="nav-link" href={{ url_for('hawkers') }}>Hawkers</a>
-            <!-- stub is shown using the name of the route -->
-            <a class="nav-link" href="/stub">Stub</a>
-        </div>
+    <a class="navbar-brand" href="/" style="font-family: Helvetica" title="Home">{{basename}}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Shops
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/store/teaShop">Tea Shop</a>
+                    <a class="dropdown-item" href="/store/TeeeShop">Teee Shop</a>
+                    <a class="dropdown-item"  href="/store/Cart">Cart</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Our Team
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/rithwikh/home">Ŕithwikh</a>
+                    <a class="dropdown-item" href="/jackson/home">Jackson</a>
+                    <a class="dropdown-item" href="/samuel/home">Samuel</a>
+                    <a class="dropdown-item" href="/lucas/home">Lucas</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/mainframe/search">Search</a>
+            </li>
+
+
+
+
     </div>
+
 </nav>
