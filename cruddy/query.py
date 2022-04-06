@@ -49,6 +49,6 @@ def authorize(name, email, password):
 
 
 # logout user
-Hack #2 Add logout to CRUD screen
+
 def logout():
     logout_user()  # removes login state of user from session

@@ -1,9 +1,9 @@
 # import "packages" from flask
 from flask import Flask, render_template
+from __init__ import app
+from cruddy.app_crud import app_crud
 
-# create a Flask instance
-app = Flask(__name__)
-
+app.register_blueprint(app_crud)
 
 # connects default URL to render index.html
 @app.route('/')
