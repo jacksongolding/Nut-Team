@@ -40,7 +40,7 @@ def authorize(name, email, password):
             name=name,
             email=email,
             password=password,
-            phone="1234567890"  # this should be added to authorize.html Hack #1
+            phone=phone  # this should be added to authorize.html Hack #1
         )
         # Password is encrypted in the init method of the class with self.set_password(password)
         # Add it to the auth_user object
