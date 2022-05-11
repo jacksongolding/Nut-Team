@@ -13,6 +13,10 @@ def index():
     return render_template("index.html")
 
 
+@app.route('/Calendar/')
+def Calendar():
+    return render_template("calendar.html")
+
 @app.route('/Results/')
 def Results():
     return render_template("Results.html")
