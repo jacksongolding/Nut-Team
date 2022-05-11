@@ -33,11 +33,19 @@ We are going to make an APUSH website study tool and calendar for Mr. Swanson. W
 
 | Name | GitHub ID and Profile | Tasks | Scrum Board | Commits | Role |
 |:-----|:----------------------|:-----:|:-----------:|:-------:|:-------:|
-
 | Ŕithwikh Várma| [@guapbeast](https://github.com/guapbeast) | [Tasks](https://github.com/jacksongolding/Nut-Team/issues/assigned/guapbeast) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) | [Commits](https://github.com/jacksongolding/Nut-Team/commits?author=guapbeast) | Github Admin
 | Lucas Ho | [@lucasho22](https://github.com/lucasho22) | [Tasks](https://github.com/jacksongolding/Nut-Team/issues/assigned/lucasho22) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/jacksongolding/Nut-Team/commits?author=lucasho22) | Designer
 | Jackson Golding | [@jacksongolding](https://github.com/jacksongolding) | [Tasks](https://github.com/jacksongolding/Nut-Team/issues/assigned/jacksongolding) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/jacksongolding/Nut-Team/commits?author=jacksongolding)| Deployment Manager
 | Samuel Wang | [@samuelwaang](https://github.com/samuelwaang) | [Tasks](https://github.com/jacksongolding/Nut-Team/issues/assigned/samuelwaang) |[Scrum Board](https://github.com/jacksongolding/Nut-Team/projects/1) |[Commits](https://github.com/jacksongolding/Nut-Team/commits?author=samuelwaang) | Technical Officer
+
+
+
+| Name | Tasks | Commits |
+|:-----|:----------------------|:-----:|
+| Lucas Ho | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) | |
+| Ŕithwikh Várma | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) |[Creation of Read-Me Page & Addition of Content](https://github.com/jacksongolding/Nut-Team/commit/982e7351420fc53f64c6457e75b8f1a9f060e43e) |
+| Jackson Golding | [Tasks](https://github.com/jacksongolding/Nut-Team/issues)  | |
+| Samuel Wang | [Tasks](https://github.com/jacksongolding/Nut-Team/issues) |[Work on some Readme](https://github.com/jacksongolding/Nut-Team/commit/9732fb64c794e73aab67eebb4d9d8803a36ba7fc) |
 
 ## Pair Share Journal Teams
 ### Lucas and Ŕithwikh
