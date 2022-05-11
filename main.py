@@ -29,9 +29,9 @@ def Building():
 def Song():
     return render_template("Song.html")
 
-@app.route('/Dune/')
-def Dune():
-    return render_template("Dune.html")
+@app.route('/overview/')
+def overview():
+    return render_template("overview.html")
 
 @app.route('/Test/')
 def Test():

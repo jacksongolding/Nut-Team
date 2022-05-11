@@ -1,40 +1,99 @@
-<!-- Navigation Bar from bootstrap
-This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
--->
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+</head>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="https://csp.nighthawkcodingsociety.com/">{{name}}</a>
+    <a class="navbar-brand" href="http://127.0.0.1:5000/">{{basename}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/" style="font-family: Helvetica" title="Home">{{basename}}</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Something LOL
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/store/lolo">idk</a>
-                    <a class="dropdown-item" href="/store/lolo">idk</a>
-                    <a class="dropdown-item"  href="/store/lolo">idk</a>
+    <style>
+        a.nav-link {
+            background-color: rgba(145, 0, 0, 0.0);
+            transition: background-color 0.5s;
+            color: #000000 !important;
+        }
+        a.nav-link:hover {
+            background-color: #e0e0e0;
+        }
+        }
+        .dropdown {
+            margin-right:10px;
+        }
+        #first{
+            margin-left:10px;
+        }
+    </style>
+
+    <body>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
+            <a class="nav-link" href="/Home">Overview</a>
+            <a class="nav-link" href="/Test">Take the Test</a>
+            <a class="nav-link" href="/Results">Results</a
+            <a class="nav-link" href="/Test"></a>
+            <a class="nav-link" href="/Song/">Song Review</a>
+            <a class="nav-link" href="/Movie/">Movie Review</a>
+            <a class="nav-link" href="/soundclouddata">SoundCloud Data</a>
+
+
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton2" type="button">Greetpages</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="/Gennalyn">Gennalyn's Greetpage</a></li>
+                            <li><a class="dropdown-item" href="/Lucas">Lucas's Greetpage</a></li>
+                            <li><a class="dropdown-item" href="/Jun">Jun's Greetpage</a></li>
+                            <li><a class="dropdown-item" href="/Ali">Ali's Greetpage</a></li>
+                            <li><a class="dropdown-item" href="/Rithwikh">Rithwikh's Greetpage</a></li>
+
+                        </ul>
+                    </li>
+
                 </div>
-            </li>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Our Team
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/rithwikh/home">Ŕithwikh</a>
-                    <a class="dropdown-item" href="/jackson/home">Jackson</a>
-                    <a class="dropdown-item" href="/samuel/home">Samuel</a>
-                    <a class="dropdown-item" href="/lucas/home">Lucas</a>
-                </div>
-            </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">MiniLabs</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="/Bimary">Binary Mini-Lab</a></li
+                                <li><a class="dropdown-item" href="/rgb">RGB Mini-Lab</a></li
+                                <li><a class="dropdown-item" href="/LogicGate">Logic Gate Mini-Lab</a></li
+                                <li><a class="dropdown-item" href="/binaryAddition">Binary Signed Addition</a></li
+                                <li><a class="dropdown-item" href="/ColorCode">Color Codes</a></li
+                                <li><a class="dropdown-item" href="/binarySignedAddition">Binary Unsigned Addition</a></li
 
-    </div>
+                            </ul>
+                        </li>
 
+                    </div>
 </nav>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
