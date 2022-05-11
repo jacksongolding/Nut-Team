@@ -33,9 +33,9 @@ def calendar():
 def overview():
     return render_template("overview.html")
 
-@app.route('/Test/')
-def Test():
-    return render_template("Test.html")
+@app.route('/study/')
+def study():
+    return render_template("study.html")
 
 @app.route('/Lorde/')
 def Lorde():
