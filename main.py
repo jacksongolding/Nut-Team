@@ -13,25 +13,25 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/Rithwikh/')
-def Rithwikh():
-    return render_template("rithomepage.html")
+@app.route('/Results/')
+def Results():
+    return render_template("Results.html")
 
-@app.route('/Samuel/')
-def Samuel():
-    return render_template("samhomepage.html")
+@app.route('/Squid/')
+def Squid():
+    return render_template("Squid.html")
 
-@app.route('/Lucas/')
-def Lucas():
-    return render_template("luchomepage.html")
+@app.route('/Building/')
+def Building():
+    return render_template("Building.html")
 
-@app.route('/Jackson/')
-def Jackson():
-    return render_template("jachomepage.html")
+@app.route('/calendar/')
+def calendar():
+    return render_template("calendar.html")
 
-@app.route('/Dune/')
-def Dune():
-    return render_template("Dune.html")
+@app.route('/overview/')
+def overview():
+    return render_template("overview.html")
 
 @app.route('/Test/')
 def Test():
@@ -88,26 +88,6 @@ def DojaCat():
 
 
 
-@app.route('/GENNALYN', methods=['GET', 'POST'])
-def GENNALYN():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("Gennalyn.html", name=name)
-    # starting and empty input default
-    return render_template("Gennalyn.html", name="World")
-
-
-@app.route('/JUN', methods=['GET', 'POST'])
-def JUN():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("Jun.html", name=name)
-    # starting and empty input default
-    return render_template("Jun.html", name="World")
 
 
 @app.route('/LUCAS', methods=['GET', 'POST'])
