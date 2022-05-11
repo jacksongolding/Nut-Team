@@ -25,9 +25,9 @@ def Squid():
 def Building():
     return render_template("Building.html")
 
-@app.route('/Song/')
-def Song():
-    return render_template("Song.html")
+@app.route('/calendar/')
+def calendar():
+    return render_template("calendar.html")
 
 @app.route('/overview/')
 def overview():
@@ -88,26 +88,6 @@ def DojaCat():
 
 
 
-@app.route('/GENNALYN', methods=['GET', 'POST'])
-def GENNALYN():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("Gennalyn.html", name=name)
-    # starting and empty input default
-    return render_template("Gennalyn.html", name="World")
-
-
-@app.route('/JUN', methods=['GET', 'POST'])
-def JUN():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("Jun.html", name=name)
-    # starting and empty input default
-    return render_template("Jun.html", name="World")
 
 
 @app.route('/LUCAS', methods=['GET', 'POST'])
