@@ -3,22 +3,25 @@
 {% block body %}
 
     <style>
-        .centerb {
+        .center {
             width: 1200px;
             height: 700px;
             padding: 10px;
             margin: 60px auto;
         }
+        html {
+            height:250%
+        }
     </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=3">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+<html>
     <body style="background-color:#96eede;">
     <div class="centerb">
         <center>
 
-            <div class="center">
+            <div class="centerb">
 
                 <marquee behavior="alternate" direction="left" scrollamount = "12">
                     <h1 style="font-family: 'Comic Sans MS'"> May 12th 2022</h1>
@@ -28,7 +31,7 @@
                     <b>AP US History Calendar</b></h1>
             </div>
 
-            <table style="padding-bottom: 20px">
+            <table style="padding-bottom: 20px; margin-left:20px;margin-right:20px;">
                 {% block links %}
                 <tr>
                     <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>1</div></td>
@@ -82,7 +85,7 @@
                         </body>
 
                     {% endblock %}
-
+</html>
 {% endblock %}
 
 {% block background %}
