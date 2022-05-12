@@ -14,19 +14,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=3">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+
     <body style="background-color:#96eede;">
-    <div class="centerb">
+    <div class="centerb" style="background-color: #96eede">
         <center>
 
-            <div class="center">
+            <div class="center" style="background-color: #96eede">
                 <h1 class="w3-text-blue" style="text-shadow:1px 1px 0 #444">
+                    <marquee behavior="alternate" direction="left" scrollamount = "12">
+                        <h1 style="font-family: 'Comic Sans MS'"> May 12th 2022</h1>
+                    </marquee>
+
                     <b>AP US History Calendar</b></h1>
             </div>
 
             <table style="padding-bottom: 20px">
                 {% block links %}
                 <tr>
-                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>1</div></td>
+                    <td style="background-color: #96eede; border: 2px solid black; line-height: 200px; width: 200px"><div>1</div></td>
                     <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>2</div></td>
                     <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>3</div></td>
                     <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>4</div></td>
@@ -75,6 +80,8 @@
                         </div>
 
                         </body>
+
+                    </div>
 
                     {% endblock %}
 
