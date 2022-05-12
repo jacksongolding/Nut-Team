@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layouts/base.html" %}
 
-</body>
-</html>
+{% block title %}
+
+    <title>Important Events and People</title>
+
+{% endblock %}
+
+{% block body %}
+    <style>
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {text-align: center}
+        td {text-align: center}
+    </style>
+    <body style="background-color:#ee850c;">
+    <h1 class="center">Important People and Events</h1>
+    <table style="padding-bottom: 20px" class="center">
+        <tr>
+            <td style="border: 2px solid cyan" width=300 text-align="center">Date (If applicable)</td>
+            <td style="border: 2px solid cyan" width=300 class="center">Event/person</td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid cyan" width=300 class="center">1775 - 1783</td>
+            <td style="border: 2px solid cyan" width=300 class="center">Revolutionary War</td>
+        </tr>
+    </table>
+
+{% endblock %}

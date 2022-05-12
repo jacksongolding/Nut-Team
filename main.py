@@ -86,7 +86,9 @@ def BTS():
 def DojaCat():
     return render_template("DojaCat.html")
 
-
+@app.route('/importantevents/')
+def importantevents():
+    return render_template("importantevents.html")
 
 
 
