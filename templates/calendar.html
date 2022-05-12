@@ -3,37 +3,83 @@
 {% block body %}
 
     <style>
-        .centerb {
+        .center {
             width: 1200px;
             height: 700px;
             padding: 10px;
             margin: 60px auto;
         }
-
+        html {
+            height:250%
+        }
     </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=3">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <body style="background-color:#ee850c;">
+<html>
+    <body style="background-color:#96eede;">
     <div class="centerb">
         <center>
 
-            <div class="center">
+            <div class="centerb">
+<br>
+<br>
+                <marquee behavior="alternate" direction="left" scrollamount = "12">
+                    <h1 style="font-family: 'Comic Sans MS'"> May 12th 2022</h1>
+                </marquee>
+<br>
+<br>
+<br>
                 <h1 class="w3-text-blue" style="text-shadow:1px 1px 0 #444">
-                    <b>Lucas Ho - About Me</b></h1>
+                    <b>AP US History Calendar</b></h1>
             </div>
+<br>
 
-            <p class="w3-monospace">Hello. My name is Lucas Ho and I am a junior at Del Norte High School. Some things I like to do are run, play video games, eat, and hang out with friends.
-                My favorite class is math. I find computer science fun and I also am looking forward to this trimester of computer science. I also learned a lot from first trimester.</p>
-
-            <table style="padding-bottom: 20px">
+            <table style="padding-bottom: 20px; margin-left:20px;margin-right:20px;">
+                {% block links %}
                 <tr>
-                    {% block links %}
-                        <td style="border: 2px solid cyan"><div><a href="{{ overview }}" class="btn" style="font-size: larger">Journal</a></div></td>
-                        <td style="border: 2px solid cyan"><div><a href="{{ repo }}" class="btn" style="font-size: larger">GitHub</a></div></td>
-                        <td style="border: 2px solid cyan"><div><a href="{{ scrumboard }}" class="btn" style="font-size: larger">Scrumboard</a></div></td>
-                        </tr>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>1</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>2</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>3</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>4</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>5</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>6</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>7</div></td>
+
+                </tr>
+                <tr>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>8</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>9</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>10</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>11</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>12</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>13</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>14</div></td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>15</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>16</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>17</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>18</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>19</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>20</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>21</div></td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>22</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>23</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>24</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>25</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>26</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>27</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>28</div></td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>29</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>30</div></td>
+                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>31</div></td>
+                </tr>
+
                         </table>
 
                         </center>
@@ -43,7 +89,7 @@
                         </body>
 
                     {% endblock %}
-
+</html>
 {% endblock %}
 
 {% block background %}
