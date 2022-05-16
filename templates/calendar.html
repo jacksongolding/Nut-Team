@@ -27,6 +27,9 @@
                 <marquee behavior="alternate" direction="left" scrollamount = "12">
                     <h1 style="font-family: 'Comic Sans MS'"> May 13th 2022</h1>
                 </marquee>
+    <marquee behavior="alternate" direction="left" scrollamount = "12">
+        <h1 style="font-family: 'Comic Sans MS'"> May 12th 2022</h1>
+    </marquee>
 <br>
 <br>
 <br>
@@ -35,10 +38,10 @@
             </div>
 <br>
 
-            <table style="padding-bottom: 20px; margin-left:20px;margin-right:20px;">
+            <table id="calendar" style="padding-bottom: 20px; margin-left:20px;margin-right:20px;">
                 {% block links %}
                 <tr>
-                    <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>1</div></td>
+                    <td id="calendar1" style="border: 2px solid black; line-height: 200px; width: 200px"><div>1</div></td>
                     <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>2</div></td>
                     <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>3</div></td>
                     <td style="border: 2px solid black; line-height: 200px; width: 200px"><div>4</div></td>
@@ -90,6 +93,27 @@
 
                     {% endblock %}
 </html>
+
+    <div class="align-center pt-5" style="padding-left: 10px">
+        <input type="text" id="numero" placeholder="Enter a number from 1-31" size="50">
+    </div>
+    <div class="align-center" style="padding-left: 10px">
+        <button id="submit_text" onclick="inputdays();">Submit</button>
+    </div>
+
+    <div class="row align-center p-3">
+        <div class="container text-white" id="output"> </div>
+    </div>
+
+    <script>
+        function inputdays() {
+            if (document.getElementById('numero').value.toLowerCase() == '1') {
+                document.getElementById('calendar1').insertAdjacentText('afterbegin', 'banana');
+            } else {
+                document.getElementById('calendar1').insertAdjacentText('afterbegin', document.getElementById('calendar1').value);
+            }
+        }
+    </script>
 {% endblock %}
 
 {% block background %}
