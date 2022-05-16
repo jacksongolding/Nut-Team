@@ -53,7 +53,7 @@
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton2" type="button">Study Resources</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                             <li><a class="dropdown-item" href="/study">Study</a></li>
-                            <li><a class="dropdown-item" href="/Rithwikh">Rithwikh's Greetpage</a></li>
+                            <li><a class="dropdown-item" href="/crud/discussion">Discussion Board</a></li>
 
                         </ul>
                     </li>
@@ -71,8 +71,13 @@
                         </li>
 
                     </div>
-
-
+                </div>
+                <div style="margin-left:10px; margin-left:500px;">
+                    <a href = {{ url_for('crud.crud_logout')}} style="color:black;">Log Out</a>
+                    <a href = {{ url_for('crud.crud_login')}} style="color:black;">Log In</a>
+                </div>
+            </div>
+        </div>
 </nav>
 </body>
 
