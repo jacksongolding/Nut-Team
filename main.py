@@ -18,6 +18,9 @@ app.register_blueprint(app_crud_api)
 def index():
     return render_template("index.html")
 
+@app.route('/quiz/')
+def quiz():
+    return render_template("quiz.html")
 
 @app.route('/Results/')
 def Results():
@@ -45,7 +48,9 @@ def study():
 
 
 
-
+@app.route('/importantevents/')
+def importantevents():
+    return render_template("importantevents.html")
 
 
 
