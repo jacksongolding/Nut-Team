@@ -28,6 +28,30 @@
         #first{
             margin-left:10px;
         }
+        .buttonz {
+            background-color: #268f79;
+            border: none;
+            color: white;
+            padding: 7px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            cursor: pointer;
+            margin-left:500px;
+        }
+        .buttonze {
+            background-color: #268f79;
+            border: none;
+            color: white;
+            padding: 7px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            cursor: pointer;
+            margin-left:10px
+        }
     </style>
 
     <body>
@@ -76,9 +100,9 @@
 
                     </div>
                 </div>
-                <div style="margin-left:10px; margin-left:500px;">
-                    <a href = {{ url_for('crud.crud_logout')}} style="color:black;">Log Out</a>
-                    <a href = {{ url_for('crud.crud_login')}} style="color:black;">Log In</a>
+                <div>
+                    <a class = "buttonz" href = {{ url_for('crud.crud_login')}} style="color:black;">Log In</a>
+                    <a class = "buttonze" href = {{ url_for('crud.crud_logout')}} style="color:black;">Log Out</a>
                 </div>
             </div>
         </div>
