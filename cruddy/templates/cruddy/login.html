@@ -1,0 +1,43 @@
+{% extends "layouts/base.html" %}
+
+
+{% block body %}
+
+    <style>
+        .box {
+            background-color: #dad5d5;
+            width: 500px;
+            border: 20px #E6BE8A;
+            padding: 50px;
+            margin: 30px;
+        }
+        .buttons {
+            background-color: #1E88F1FF;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 15px 2px 4px;
+        }
+    </style>
+
+            <div class="box">
+                <form method="POST" ID="login" action={{url_for('crud.crud_login')}}>
+                    <table>
+                        <tr><th><label for="email">Email</label></th></tr>
+                        <tr><td><input type="email" id='email' name="email" size="20" required></td></tr>
+                        <tr><th><label for="password">Password</label></th></tr>
+                        <tr><td><input type="password" id="password" name="password" size="20" required></td></tr>
+                        <tr><th><input type="submit" value="Submit" class="buttons"></th></tr>
+                        <tr><td><a class ="buttons" href={{url_for('crud.crud_authorize')}} >Sign Up</a></td></tr>
+                    </table>
+                </form>
+            </div>
+
+
+{% endblock %}
+
