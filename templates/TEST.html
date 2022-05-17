@@ -1,0 +1,96 @@
+{% include "layouts/navbar.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Important People to Know</title>
+    <link
+            href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<div class="container">
+    <h1>Key American Figures</h1>
+    <ul id="keyfigures"></ul>
+</div>
+</body>
+</html>
+
+<style>
+
+    body {
+        background-image: url("/static/assets/flag.png");
+        color: white;
+        margin: 0;
+        font-family: rubik;
+    }
+
+    .container {
+        padding: 40px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 54px;
+    }
+
+    #keyfigures {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 20px;
+        padding-inline-start: 0;
+    }
+
+
+    .card {
+        list-style: none;
+        padding: 40px;
+        background-color: #f4f4f4;
+        color: #222;
+        text-align: center;
+    }
+
+    .card:hover {
+        animation: bounce 0.5s linear;
+    }
+
+    .card-title {
+        text-transform: capitalize;
+        margin-bottom: 0px;
+        font-size: 32px;
+        font-weight: normal;
+    }
+    .card-subtitle {
+        margin-top: 5px;
+        color: #666;
+        font-weight: lighter;
+    }
+
+    .card-image {
+        height: 180px;
+    }
+
+    @keyframes bounce {
+        20% {
+            transform: translateY(-6px);
+        }
+        40% {
+            transform: translateY(0px);
+        }
+
+        80% {
+            transform: translateY(-2px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+</style>
+
+
