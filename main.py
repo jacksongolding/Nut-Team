@@ -46,7 +46,9 @@ def overview():
 def study():
     return render_template("study.html")
 
-
+@app.route('/test/')
+def test():
+    return render_template("test.html")
 
 @app.route('/importantevents/')
 def importantevents():
