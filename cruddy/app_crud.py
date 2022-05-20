@@ -1,7 +1,6 @@
 """control dependencies to support CRUD app routes and APIs"""
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
-from flask_admin import Admin
 
 from cruddy.query import *
 
@@ -30,16 +29,6 @@ def crud():
 def discussion():
     """obtains all Users from table and loads Admin Form"""
     return render_template("discussion.html", table=users_all())
-
-@app_crud.route('/testing/')
-def testing():
-    """obtains all Users from table and loads Admin Form"""
-    return render_template("testing.html", table=users_all())
-
-@app_crud.route('/thread/')
-def thread():
-    """obtains all Users from table and loads Admin Form"""
-    return render_template("thread.html", table=users_all())
 
 @app_crud.route('/logout')
 @login_required
