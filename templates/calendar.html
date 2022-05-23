@@ -26,7 +26,7 @@
 <br>
 
     <marquee behavior="alternate" direction="left" scrollamount = "12">
-        <h1 style="font-family: 'Comic Sans MS'"> May 18th 2022</h1>
+        <h1 style="font-family: 'Comic Sans MS'"> May 20th 2022</h1>
     </marquee>
 <br>
 <br>
@@ -107,7 +107,7 @@
 
 
     <div class="align-center pt-5" style="padding-left: 10px":>
-        <input type="text" id="delete" placeholder="What day would you like to delete infromation?" size="50">
+        <input type="text" id="burger" placeholder="What day would you like to delete information?" size="50">
     </div>
     <div class="align-center" style="padding-left: 10px">
         <button id="submit_text" onclick="deleteinfo();">Submit</button>
@@ -123,17 +123,17 @@
             let inpot=document.getElementById('numero').value;
 
             if (document.getElementById('numero').value.toLowerCase() == document.getElementById('numero').value.toLowerCase()) {
-                document.getElementById('calendar' + inpot).insertAdjacentText('beforeend', input);
+                document.getElementById('calendar' + inpot).insertAdjacentHTML('beforeend', input);
             } else {
-                document.getElementById('calendar').insertAdjacentText('beforeend', 'ERROR ERROR');
+                document.getElementById('calendar').insertAdjacentHTML('beforeend', 'ERROR ERROR');
             }
             }
 
         function deleteinfo() {
-            let deli=document.getElementById('delete').value;
+            let deli=document.getElementById('burger').value;
 
-            if (document.getElementById('delete').value == document.getElementById('delete').value) {
-                document.getElementById('data' + deli).remove();
+            if (document.getElementById('delete').value.toLowerCase() == document.getElementById('delete').value.toLowerCase()) {
+                document.getElementById('calendar' + deli).delete().innerHTML;
             } else {
                 displayDate();
             }
