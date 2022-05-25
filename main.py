@@ -1,10 +1,9 @@
 # import "packages" from flask
-from flask import Flask, request, render_template
-import requests
-import json
+from flask import request, render_template
+
+from __init__ import app
 from cruddy.app_crud import app_crud
 from cruddy.app_crud_api import app_crud_api
-from __init__ import app
 
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
