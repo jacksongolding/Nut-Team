@@ -174,7 +174,7 @@ def model_printerr():
         print(row)
 
 if __name__ == "__main__":
-    model_tester()  # builds model of Users
+    model_tester()
     model_printer()
     model_testerr()
     model_printerr()
