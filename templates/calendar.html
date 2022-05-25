@@ -114,6 +114,51 @@
 
                     </div>
 
+                    {% block meta %}
+                        <title>CRUD page</title>
+                        <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
+                        <script src={{  url_for("crud.static", filename="javascript/reload_page.js", version='101') }}></script>
+                    {% endblock %}
+
+                    <!-- CONTENT (in <body>), content for this page -->
+                        <div class="container py-4">
+                            <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+                                <span class="fs-4">SQL CRUD Admin Page</span>
+                            </header>
+                        </div>
+                        <div class="container py-4 text-light bg-success">
+
+                            <div class="container bg-secondary py-4">
+                                <div class="p-5 mb-4 bg-light text-dark rounded-3">
+                                    <h2>Table Viewer</h2>
+                                    <div class="row align-items-md-stretch">
+                                        <div class="container-fluid py-5">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Day</th>
+                                                    <th>Information</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Loop through rows in table -->
+                                                {% for row in table %}
+                                                    <tr>
+                                                        <td>{{ row['day'] }}</td>
+                                                        <td>{{ row['information'] }}</td>
+                                                    </tr>
+
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
                         </body>
 
                     {% endblock %}

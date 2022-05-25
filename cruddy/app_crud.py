@@ -91,8 +91,17 @@ def create():
             request.form.get("information")
         )
         po.create()
-    return redirect(url_for('calendar'))
+    return redirect(url_for('crud.calendar'))
 
+
+@app_crud.route('/calendar/')
+def calendar():
+    print(calendar_all())
+    return render_template("calendar.html", table=calendar_all())
+
+@app_crud.route('/crudcalendar/')
+def crudCalendar():
+    return render_template("crudCalendar.html", table=calendar_all())
 
 # CRUD read
 @app_crud.route('/read/', methods=["POST"])
@@ -132,8 +141,10 @@ def delete():
     return redirect(url_for('crud.crud'))
 
 
-# Search Form
-
+def calendar_all():
+    table = coolendar.query.all()
+    json_ready = [peep.read() for peep in table]
+    return json_ready
 
 
 # Search request and response

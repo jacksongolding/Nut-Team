@@ -36,15 +36,6 @@ def Squid():
 def Building():
     return render_template("Building.html")
 
-@app.route('/calendar/')
-def calendar():
-    if request.form:
-        po = coolendar(
-            request.form.get("day"),
-            request.form.get("information")
-        )
-        po.create()
-    return render_template("calendar.html", table=model_printerr())
 
 
 @app.route('/overview/')
