@@ -1,9 +1,12 @@
 # import "packages" from flask
-from flask import request, render_template
-
-from __init__ import app
+from flask import Flask, request, render_template, url_for, redirect
+import requests
+import json
 from cruddy.app_crud import app_crud
 from cruddy.app_crud_api import app_crud_api
+from __init__ import app
+from cruddy.model import Users, coolendar, model_printerr
+from cruddy.query import users_all
 
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
@@ -35,7 +38,14 @@ def Building():
 
 @app.route('/calendar/')
 def calendar():
-    return render_template("calendar.html")
+    if request.form:
+        po = coolendar(
+            request.form.get("day"),
+            request.form.get("information")
+        )
+        po.create()
+    return render_template("calendar.html", table=model_printerr())
+
 
 @app.route('/overview/')
 def overview():
