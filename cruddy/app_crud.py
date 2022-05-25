@@ -2,6 +2,7 @@
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
 
+from cruddy.model import coolendar, model_printerr
 from cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
@@ -85,14 +86,12 @@ def crud_authorize():
 def create():
     """gets data from form and add it to Users table"""
     if request.form:
-        po = Users(
-            request.form.get("name"),
-            request.form.get("email"),
-            request.form.get("password"),
-            request.form.get("phone")
+        po = coolendar(
+            request.form.get("day"),
+            request.form.get("information")
         )
         po.create()
-    return redirect(url_for('crud.crud'))
+    return redirect(url_for('calendar'))
 
 
 # CRUD read
