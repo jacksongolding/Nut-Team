@@ -1,8 +1,9 @@
 """control dependencies to support CRUD app routes and APIs"""
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
+from flask_admin import Admin
 
-from cruddy.model import coolendar, model_printerr
+# from cruddy.model import coolendar, model_printerr
 from cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
@@ -80,23 +81,33 @@ def crud_authorize():
     # show the auth user page if the above fails for some reason
     return render_template("authorize.html")
 
-
-# CRUD create/add
 @app_crud.route('/create/', methods=["POST"])
 def create():
     """gets data from form and add it to Users table"""
     if request.form:
-        po = coolendar(
-            request.form.get("day"),
-            request.form.get("information")
+        po = Users(
+            request.form.get("name"),
+            request.form.get("email"),
+            request.form.get("password"),
+            request.form.get("phone")
         )
         po.create()
-    return redirect(url_for('crud.calendar'))
+    return redirect(url_for('crud.crud'))
+# CRUD create/add
+# @app_crud.route('/create/', methods=["POST"])
+# def create():
+#     """gets data from form and add it to Users table"""
+#     if request.form:
+#         po = coolendar(
+#             request.form.get("day"),
+#             request.form.get("information")
+#         )
+#         po.create()
+#     return redirect(url_for('crud.calendar'))
 
 
 @app_crud.route('/calendar/')
 def calendar():
-    print(calendar_all())
     return render_template("calendar.html", table=calendar_all())
 
 @app_crud.route('/crudcalendar/')

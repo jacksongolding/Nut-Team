@@ -38,50 +38,24 @@
             </div>
 <br>
 
-            <table id="calendar" style="padding-bottom: 20px; margin-left:20px;margin-right:20px;">
+            <table id="calendar" style="padding-bottom: 20px; margin-left:20px;margin-right:20px;" onfocus="calup();">
                 {% block links %}
                 <tr>
-                    <td class="days" id="calendar1" style="border: 2px solid black; height: 200px; width: 200px"><div>1</div></td>
-                    <td class="days" id="calendar2" style="border: 2px solid black; height: 200px; width: 200px"><div>2</div></td>
-                    <td class="days" id="calendar3" style="border: 2px solid black; height: 200px; width: 200px"><div>3</div></td>
-                    <td class="days" id="calendar4" style="border: 2px solid black; height: 200px; width: 200px"><div>4</div></td>
-                    <td class="days" id="calendar5" style="border: 2px solid black; height: 200px; width: 200px"><div>5</div></td>
-                    <td class="days" id="calendar6" style="border: 2px solid black; height: 200px; width: 200px"><div>6</div></td>
-                    <td class="days" id="calendar7" style="border: 2px solid black; height: 200px; width: 200px"><div>7</div></td>
+                {% for num in range(1, 32, 1) %}
+                    <td class="days" id="calendar{{ num }}" style="border: 2px solid black; height: 200px; width: 200px"><div>{{ num }}
+                    {% for row in table %}
+                        {% if row.day == num %}
+                            <br>{{ row['information'] }}
+                        {% endif %}
+                    {% endfor %}
+                    </div></td>
+                {% if num % 7 == 0 %}
+                </tr>
+                <tr>
+                {% endif %}
+                {% endfor %}
+                    </tr>
 
-                </tr>
-                <tr>
-                    <td class="days" id="calendar8" style="border: 2px solid black; height: 200px; width: 200px"><div>8</div></td>
-                    <td class="days" id="calendar9" style="border: 2px solid black; height: 200px; width: 200px"><div>9</div></td>
-                    <td class="days" id="calendar10" style="border: 2px solid black; height: 200px; width: 200px"><div>10</div></td>
-                    <td class="days" id="calendar11" style="border: 2px solid black; height: 200px; width: 200px"><div>11</div></td>
-                    <td class="days" id="calendar12" style="border: 2px solid black; height: 200px; width: 200px"><div>12</div></td>
-                    <td class="days" id="calendar13" style="border: 2px solid black; height: 200px; width: 200px"><div>13</div></td>
-                    <td class="days" id="calendar14" style="border: 2px solid black; height: 200px; width: 200px"><div>14</div></td>
-                </tr>
-                <tr>
-                    <td class="days" id="calendar15" style="border: 2px solid black; height: 200px; width: 200px"><div>15</div></td>
-                    <td class="days" id="calendar16" style="border: 2px solid black; height: 200px; width: 200px"><div>16</div></td>
-                    <td class="days" id="calendar17" style="border: 2px solid black; height: 200px; width: 200px"><div>17</div></td>
-                    <td class="days" id="calendar18" style="border: 2px solid black; height: 200px; width: 200px"><div>18</div></td>
-                    <td class="days" id="calendar19" style="border: 2px solid black; height: 200px; width: 200px"><div>19</div></td>
-                    <td class="days" id="calendar20" style="border: 2px solid black; height: 200px; width: 200px"><div>20</div></td>
-                    <td class="days" id="calendar21" style="border: 2px solid black; height: 200px; width: 200px"><div>21</div></td>
-                </tr>
-                <tr>
-                    <td class="days" id="calendar22" style="border: 2px solid black; height: 200px; width: 200px"><div>22</div></td>
-                    <td class="days" id="calendar23" style="border: 2px solid black; height: 200px; width: 200px"><div>23</div></td>
-                    <td class="days" id="calendar24" style="border: 2px solid black; height: 200px; width: 200px"><div>24</div></td>
-                    <td class="days" id="calendar25" style="border: 2px solid black; height: 200px; width: 200px"><div>25</div></td>
-                    <td class="days" id="calendar26" style="border: 2px solid black; height: 200px; width: 200px"><div>26</div></td>
-                    <td class="days" id="calendar27" style="border: 2px solid black; height: 200px; width: 200px"><div>27</div></td>
-                    <td class="days" id="calendar28" style="border: 2px solid black; height: 200px; width: 200px"><div>28</div></td>
-                </tr>
-                <tr>
-                    <td class="days" id="calendar29" style="border: 2px solid black; height: 200px; width: 200px"><div>29</div></td>
-                    <td class="days" id="calendar30" style="border: 2px solid black; height: 200px; width: 200px"><div>30</div></td>
-                    <td class="days" id="calendar31" style="border: 2px solid black; height: 200px; width: 200px"><div>31</div></td>
-                </tr>
 
                         </table>
 
@@ -113,6 +87,22 @@
                         </div>
 
                     </div>
+
+                    <script>
+                        function calup() {
+                            alert ('hello')
+                            //let input=document.getElementById('day').value;
+                            //let inpot=document.getElementById('information').value;
+
+                            /*if (document.getElementById('day').value.toLowerCase() == document.getElementById('day').value.toLowerCase()) {
+                                document.getElementById('calendar' + input).insertAdjacentHTML('beforeend', inpot);
+                            } else {
+                                document.getElementById('calendar').insertAdjacentHTML('beforeend', 'ERROR ERROR');
+                            }*/
+
+                            //document.getElementById('calendar' + 'day').value = information
+                        }
+                    </script>
 
                     {% block meta %}
                         <title>CRUD page</title>
@@ -147,7 +137,6 @@
                                                         <td>{{ row['day'] }}</td>
                                                         <td>{{ row['information'] }}</td>
                                                     </tr>
-
                                                 {% endfor %}
                                                 </tbody>
                                             </table>
