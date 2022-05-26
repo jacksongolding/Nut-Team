@@ -3,11 +3,11 @@ from flask import Flask, request, render_template
 import requests
 import json
 from cruddy.app_crud import app_crud
-from cruddy.app_crud_api import app_crud_api
-from __init__ import app
+from __init__ import app, login_manager
+from notey.app_notes import app_notes
 
 app.register_blueprint(app_crud)
-app.register_blueprint(app_crud_api)
+app.register_blueprint(app_notes)
 
 # create a Flask instance
 
@@ -76,6 +76,10 @@ def RITHWIKH():
             return render_template("Rithwikh.html", name=name)
     # starting and empty input default
     return render_template("Rithwikh.html", name="World")
+
+@app.route('/flashcards/')
+def flashcards():
+    return render_template("flashcards.html")
 
 
 # runs the application on the development server
