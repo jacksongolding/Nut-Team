@@ -4,10 +4,12 @@ import requests
 import json
 from cruddy.app_crud import app_crud
 from __init__ import app
-from cruddy.model import Users, coolendar, model_printerr
+from notey.app_notes import app_notes
+# from cruddy.model import Users, coolendar, model_printerr
 from cruddy.query import users_all
 
 app.register_blueprint(app_crud)
+app.register_blueprint(app_notes)
 
 
 # create a Flask instance
