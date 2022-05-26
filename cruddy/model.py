@@ -195,15 +195,17 @@ def model_builder():
             '''fails with bad or duplicate data'''
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {row.email}")
-        p1 = Discussion(post='hi')
-        table1 = [p1]
-        for posts in table1:
-            try:
-                db.session.add(posts)
-                db.session.commit()
-            except IntegrityError:
-                db.session.remove()
-                print("stop trying to do the same thing twice")
+
+    p1 = Discussion(post='hi')
+    p2 = Discussion(post='bye')
+    table1 = [p1, p2]
+    for posts in table1:
+        try:
+            db.session.add(posts)
+            db.session.commit()
+        except IntegrityError:
+            db.session.remove()
+            print("stop trying to do the same thing twice")
 
 def model_driver():
     print("---------------------------")
@@ -220,6 +222,7 @@ def model_driver():
     print("---------------------------")
     print()
 
+
     users = Users.query
     for user in users:
         print("User" + "-" * 81)
@@ -231,58 +234,68 @@ def model_driver():
         print()
 
 
-# class coolendar(UserMixin, db.Model):
-#     ID = db.Column(db.Integer, primary_key=True)
-#     day = db.Column(db.Integer,  unique=True, nullable=False)
-#     information = db.Column(db.String(255), unique=False, nullable=False)
-#
-#     def __init__(self, day, information):
-#         self.day = day
-#         self.information = information
-#
-#     def create(self):
-#         try:
-#             db.session.add(self)
-#             db.session.commit()
-#             return self
-#         except IntegrityError:
-#             db.session.remove()
-#             return None
-#
-#     def read(self):
-#         return {
-#             "day": self.day,
-#             "information": self.information
-#         }
-#
-# def model_testerr():
-#     print("--------------------------")
-#     print("Seed Data for Table: coolendar")
-#     print("--------------------------")
-#     db.create_all()
-#     """Tester data for table"""
-#     u1 = coolendar(day='1', information='test tomorrow')
-#     u2 = coolendar(day='18', information='Chapters 28 and 29 homework due', )
-#
-#     table = [u1, u2]
-#     for row in table:
-#         try:
-#             db.session.add(row)
-#             db.session.commit()
-#         except IntegrityError:
-#             db.session.remove()
-#
-# def model_printerr():
-#     print("------------")
-#     print("Table: users with SQL query")
-#     print("------------")
-#     result = db.session.execute('select * from coolendar')
-#     print(result.keys())
-#     for row in result:
-#         print(row)
+class coolendar(UserMixin, db.Model):
+    ID = db.Column(db.Integer, primary_key=True)
+    day = db.Column(db.Integer,  unique=True, nullable=False)
+    information = db.Column(db.String(255), unique=False, nullable=False)
+
+    def __init__(self, day, information):
+        self.day = day
+        self.information = information
+
+    def create(self):
+        try:
+            db.session.add(self)
+            db.session.commit()
+            return self
+        except IntegrityError:
+            db.session.remove()
+            return None
+
+    def read(self):
+        return {
+            "day": self.day,
+            "information": self.information
+        }
+
+def model_testerr():
+    print("--------------------------")
+    print("Seed Data for Table: coolendar")
+    print("--------------------------")
+    db.create_all()
+    """Tester data for table"""
+    u1 = coolendar(day='1', information='test tomorrow')
+    u2 = coolendar(day='18', information='Chapters 28 and 29 homework due', )
+
+    table = [u1, u2]
+    for row in table:
+        try:
+            db.session.add(row)
+            db.session.commit()
+        except IntegrityError:
+            db.session.remove()
+
+def model_printerr():
+    print("------------")
+    print("Table: users with SQL query")
+    print("------------")
+    result = db.session.execute('select * from coolendar')
+    print(result.keys())
+    for row in result:
+        print(row)
+
+def model_printerrr():
+    print("------------")
+    print("Table: users with SQL query")
+    print("------------")
+    result = db.session.execute('select * from Discussion')
+    print(result.keys())
+    for row in result:
+        print(row)
 
 if __name__ == "__main__":
     model_driver()
-    # model_testerr()
-    # model_printerr()
+    model_testerr()
+    model_printerr()
+    model_printerrr()
 
