@@ -39,7 +39,7 @@ def testing():
 @app_crud.route('/thread/')
 def thread():
     """obtains all Users from table and loads Admin Form"""
-    return render_template("thread.html", table=users_all())
+    return render_template("thread .html", table=users_all())
 
 @app_crud.route('/logout')
 @login_required
