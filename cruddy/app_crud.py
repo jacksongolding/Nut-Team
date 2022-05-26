@@ -96,7 +96,6 @@ def create():
 
 @app_crud.route('/calendar/')
 def calendar():
-    print(calendar_all())
     return render_template("calendar.html", table=calendar_all())
 
 @app_crud.route('/crudcalendar/')
