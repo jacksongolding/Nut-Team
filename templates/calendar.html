@@ -38,7 +38,7 @@
             </div>
 <br>
 
-            <table id="calendar" style="padding-bottom: 20px; margin-left:20px;margin-right:20px;" onfocus="calup();">
+            <table id="calendar" style="padding-bottom: 20px; margin-left:20px;margin-right:20px;">
                 {% block links %}
                 <tr>
                 {% for num in range(1, 32, 1) %}
@@ -66,7 +66,7 @@
                     <div class="container bg-secondary py-4">
                         <div class="p-5 mb-4 bg-light text-dark rounded-3">
                             <h2>Add Information to the Calendar</h2>
-                            <form method="POST" ID="create" action={{url_for('crud.create')}} >
+                            <form method="POST" ID="create" action={{url_for('crud.createCoolendar')}} >
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -88,21 +88,6 @@
 
                     </div>
 
-                    <script>
-                        function calup() {
-                            alert ('hello')
-                            //let input=document.getElementById('day').value;
-                            //let inpot=document.getElementById('information').value;
-
-                            /*if (document.getElementById('day').value.toLowerCase() == document.getElementById('day').value.toLowerCase()) {
-                                document.getElementById('calendar' + input).insertAdjacentHTML('beforeend', inpot);
-                            } else {
-                                document.getElementById('calendar').insertAdjacentHTML('beforeend', 'ERROR ERROR');
-                            }*/
-
-                            //document.getElementById('calendar' + 'day').value = information
-                        }
-                    </script>
 
                     {% block meta %}
                         <title>CRUD page</title>

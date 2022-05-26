@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, request, url_for, redirect, jsonif
 from flask_login import login_required
 from flask_admin import Admin
 
-# from cruddy.model import coolendar, model_printerr
+from cruddy.model import coolendar, model_printerr
 from cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
@@ -94,16 +94,16 @@ def create():
         po.create()
     return redirect(url_for('crud.crud'))
 # CRUD create/add
-# @app_crud.route('/create/', methods=["POST"])
-# def create():
-#     """gets data from form and add it to Users table"""
-#     if request.form:
-#         po = coolendar(
-#             request.form.get("day"),
-#             request.form.get("information")
-#         )
-#         po.create()
-#     return redirect(url_for('crud.calendar'))
+@app_crud.route('/createCoolendar/', methods=["POST"])
+def createCoolendar():
+    """gets data from form and add it to Users table"""
+    if request.form:
+        po = coolendar(
+            request.form.get("day"),
+            request.form.get("information")
+        )
+        po.create()
+    return redirect(url_for('crud.calendar'))
 
 
 @app_crud.route('/calendar/')
