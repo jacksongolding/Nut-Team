@@ -1,13 +1,14 @@
 # import "packages" from flask
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for, redirect
 import requests
 import json
 from cruddy.app_crud import app_crud
-from __init__ import app, login_manager
-from notey.app_notes import app_notes
+from __init__ import app
+from cruddy.model import Users, coolendar, model_printerr
+from cruddy.query import users_all
 
 app.register_blueprint(app_crud)
-app.register_blueprint(app_notes)
+
 
 # create a Flask instance
 
@@ -34,9 +35,7 @@ def Squid():
 def Building():
     return render_template("Building.html")
 
-@app.route('/calendar/')
-def calendar():
-    return render_template("calendar.html")
+
 
 @app.route('/overview/')
 def overview():

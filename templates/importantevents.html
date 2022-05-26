@@ -35,10 +35,11 @@
             <td id="row3a" style="border: 2px solid cyan" width=300 class="center"><div></div></td>
             <td id="row3b" style="border: 2px solid cyan" width=300 class="center"><div></div></td>
         </tr>
+        {% endblock %}
     </table>
 
-    {% endblock %}
 
+    <button onclick="event()">Button</button>
     <div>
         <input type="text" id="event" placeholder="Add a new event">
     </div>
@@ -46,23 +47,30 @@
         <input type="text" id="date" placeholder="Add a new event">
     </div>
     <div class="align-center" style="padding-left: 10px">
-        <button id="submit_text" onclick="newEvent();">Submit</button>
+        <button id="submit_text" onclick="newEvent()">Submit</button>
     </div>
     <div class="row align-center p-3">
         <div class="container text-white" id="output"> </div>
     </div>
-    </body>
 
     <script>
+        function event() {
+            var x = document.getElementById("eventTable").insertRow(0);
+            var y = x.insertCell(0);
+            var z = x.insertCell(1);
+            y.innerHTML="Date";
+            z.innerHTML="Event";
+        }
+
         function newEvent() {
             let input=document.getElementById('event').value;
             let input2=document.getElementById('date').value;
-
             if (document.getElementById('event').value.toLowerCase() == document.getElementById('event').value.toLowerCase()) {
                 document.getElementById('row3a').insertAdjacentText('beforeend', input2);
                 document.getElementById('row3b').insertAdjacentText('beforeend', input);
-        }
+            }
         }
     </script>
+    </body>
 
 {% endblock %}

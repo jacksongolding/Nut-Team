@@ -1,5 +1,7 @@
 """ database dependencies to support Users db examples """
-from random import randrange
+from flask import url_for
+from werkzeug.utils import redirect
+from werkzeug.wrappers import request
 
 from __init__ import db
 from sqlalchemy.exc import IntegrityError
@@ -83,6 +85,8 @@ class Notes(db.Model):
         }
 
 
+
+
 class Users(UserMixin, db.Model):
     # define the Users schema
     userID = db.Column(db.Integer, primary_key=True)
@@ -90,7 +94,6 @@ class Users(UserMixin, db.Model):
     email = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), unique=False, nullable=False)
     phone = db.Column(db.String(255), unique=False, nullable=False)
-    notes = db.relationship("Notes", cascade='all, delete', backref='users', lazy=True)
 
     # constructor of a User object, initializes of instance variables within object
     def __init__(self, name, email, password, phone):
@@ -223,6 +226,58 @@ def model_driver():
     for row in result:
         print(row)
 
+class coolendar(UserMixin, db.Model):
+    ID = db.Column(db.Integer, primary_key=True)
+    day = db.Column(db.Integer,  unique=True, nullable=False)
+    information = db.Column(db.String(255), unique=False, nullable=False)
+
+    def __init__(self, day, information):
+        self.day = day
+        self.information = information
+
+    def create(self):
+        try:
+            db.session.add(self)
+            db.session.commit()
+            return self
+        except IntegrityError:
+            db.session.remove()
+            return None
+
+    def read(self):
+        return {
+            "day": self.day,
+            "information": self.information
+        }
+
+def model_testerr():
+    print("--------------------------")
+    print("Seed Data for Table: coolendar")
+    print("--------------------------")
+    db.create_all()
+    """Tester data for table"""
+    u1 = coolendar(day='1', information='test tomorrow')
+    u2 = coolendar(day='18', information='Chapters 28 and 29 homework due', )
+
+    table = [u1, u2]
+    for row in table:
+        try:
+            db.session.add(row)
+            db.session.commit()
+        except IntegrityError:
+            db.session.remove()
+
+def model_printerr():
+    print("------------")
+    print("Table: users with SQL query")
+    print("------------")
+    result = db.session.execute('select * from coolendar')
+    print(result.keys())
+    for row in result:
+        print(row)
 
 if __name__ == "__main__":
     model_driver()
+    model_testerr()
+    model_printerr()
+
