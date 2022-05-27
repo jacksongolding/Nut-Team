@@ -1,32 +1,65 @@
-<body>
-    <div>
-        <form method="POST" ID="create" action={{url_for('crud.discussioncreate')}}>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th><label for="posts">Posts</label> </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><textarea rows = "5" cols = "100%" name = "posts" id="posts" required></textarea></td>
-                    <td><input type="submit" value="Create" ></td>
-                </tr>
-                </tbody>
-            </table>
-        </form>
+{% extends "layouts/base.html" %}
 
-        <div class="table-responsive">
-            <table class="table">
-                <tbody>
-                {% for post in table %}
+{% block body %}
+    <style>
+        .post {
+            background-color: whitesmoke;
+            font-family: DengXian;
+            font-size: 130%;
+            margin-left: 20px;
+        }
+        th {
+            font-size: 200%;
+        }
+        .postbutton {
+            margin-right: 30px;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 7px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            cursor: pointer;
+            margin-left:10px;
+            border-color: black
+        }
+        .postbutton:hover {
+            background-color: rgb(206, 203, 203)
+        }
+
+    </style>
+
+    <body>
+        <div>
+            <form method="POST" ID="create" action={{url_for('crud.discussioncreate')}}>
+                <table class="table">
+                    <thead>
                     <tr>
-                        <td>{{ post['post'] }}</td>
+                        <th><label for="posts">Discussion Board</label> </th>
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><textarea rows = "5" cols = "100%" name = "posts" id="posts" required></textarea></td>
+                        <td><input type="submit" value="Post" class="postbutton"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
 
-    </div>
-</body>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                    {% for post in table %}
+                        <tr>
+                            <td class="post">{{ post['post'] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </body>
+{% endblock %}
