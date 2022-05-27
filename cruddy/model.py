@@ -257,6 +257,43 @@ def model_driver():
 
 
 
+class Events(db.Model):
+    eventID = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255))
+    date = db.Column(db.String(255))
+    description = db.Column(db.Text)
+
+    def __init__(self, name, date, description):
+        self.name = name
+        self.date = date
+        self.description = description
+
+    def create(self):
+        try:
+            db.session.add(self)
+            db.session.commit()
+            return self
+        except IntegrityError:
+            db.session.remove()
+            return None
+
+    def update(self, name, date="", description=""):
+        if len(name) > 0:
+            self.name = name
+        if len(date) > 0:
+            self.date = date
+        if len(description) > 0:
+            self.description = description
+        db.session.commit()
+        return self
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
+
+
+
 def model_testerr():
     print("--------------------------")
     print("Seed Data for Table: coolendar")
@@ -265,6 +302,7 @@ def model_testerr():
     """Tester data for table"""
     u1 = coolendar(day='1', information='test tomorrow')
     u2 = coolendar(day='18', information='Chapters 28 and 29 homework due', )
+    u3 = Events(name="Civil War", date="Apr 12, 1861 – Apr 9, 1865", description="the war that was civil")
 
     table = [u1, u2]
     for row in table:
