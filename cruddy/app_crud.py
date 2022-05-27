@@ -2,8 +2,7 @@
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
 from flask_admin import Admin
-
-from cruddy.model import coolendar, model_printerr
+from cruddy.model import coolendar, model_printerr, Discussion
 from cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
@@ -25,12 +24,6 @@ app_crud = Blueprint('crud', __name__,
 def crud():
     """obtains all Users from table and loads Admin Form"""
     return render_template("crud.html", table=users_all())
-
-@app_crud.route('/discussion/')
-@login_required  # Flask-Login uses this decorator to restrict access to logged in users
-def discussion():
-    """obtains all Users from table and loads Admin Form"""
-    return render_template("discussion.html", table=users_all())
 
 @app_crud.route('/logout')
 @login_required
@@ -106,6 +99,7 @@ def createCoolendar():
     return redirect(url_for('crud.calendar'))
 
 
+
 @app_crud.route('/calendar/')
 def calendar():
     return render_template("calendar.html", table=calendar_all())
@@ -166,3 +160,25 @@ def search_term():
     term = req['term']
     response = make_response(jsonify(users_ilike(term)), 200)
     return response
+
+
+@app_crud.route('/discussioncreate/', methods=["POST"])
+def discussioncreate():
+    """gets data from form and add it to Users table"""
+    if request.form:
+        do = Discussion(
+            request.form.get("posts")
+        )
+        do.create()
+    return redirect(url_for('crud.discussion'))
+
+@app_crud.route('/discussion/')
+@login_required
+def discussion():
+    return render_template("discussion.html", table=discussion_all())
+
+
+def discussion_all():
+    table1 = Discussion.query.all()
+    json_ready = [peep.read() for peep in table1]
+    return json_ready

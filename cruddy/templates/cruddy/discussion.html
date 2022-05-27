@@ -1,9 +1,32 @@
-{% extends "layouts/base.html" %}
-
-{% block body %}
-
 <body>
-    <p>hi</p>
-</body>
+    <div>
+        <form method="POST" ID="create" action={{url_for('crud.discussioncreate')}}>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><label for="posts">Posts</label> </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><textarea rows = "5" cols = "100%" name = "posts" id="posts" required></textarea></td>
+                    <td><input type="submit" value="Create" ></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
 
-{% endblock %}
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                {% for post in table %}
+                    <tr>
+                        <td>{{ post['post'] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
