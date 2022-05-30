@@ -105,6 +105,19 @@ def createCoolendar():
         po.create()
     return redirect(url_for('crud.calendar'))
 
+def el_day(day):
+    """finds User in table matching userid """
+    return Users.query.filter_by(userID=day).first()
+
+@app_crud.route('/deleteCoolendar/', methods=["POST"])
+def deleteCoolendar():
+    """gets userid from form delete corresponding record from Users table"""
+    if request.form:
+        day = request.form.get("day")
+        po = el_day(day)
+        if po is not None:
+            po.delete()
+    return redirect(url_for('crud.calendar'))
 
 @app_crud.route('/calendar/')
 def calendar():
@@ -166,3 +179,4 @@ def search_term():
     term = req['term']
     response = make_response(jsonify(users_ilike(term)), 200)
     return response
+

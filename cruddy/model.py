@@ -258,6 +258,11 @@ class coolendar(UserMixin, db.Model):
             "information": self.information
         }
 
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
+
 def model_testerr():
     print("--------------------------")
     print("Seed Data for Table: coolendar")

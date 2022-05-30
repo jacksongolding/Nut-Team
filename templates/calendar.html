@@ -85,7 +85,29 @@
                                 <p id="pswError"></p>
                             </form>
                         </div>
+                    </div>
 
+                    <div class="col-md-3">
+                        <div class="p-5 mb-4 bg-dark text-white rounded-3">
+                            <h2>Delete</h2>
+                            <form method="POST" ID="delete" action={{url_for('crud.deleteCoolendar')}} >
+                                <table id="read_table">
+                                    <tr><th><label for="day">ID</label></th></tr>
+                                    <tr>
+                                        <td>
+                                            <select class="form-select" name="day" id="delete_day">
+                                                <optgroup label="day">
+                                                    {% for row in table %}
+                                                        <option label="{{ row['day'] }}">{{ row['day'] }}</option>
+                                                    {% endfor %}
+                                                </optgroup>
+                                            </select>
+                                        </td>
+                                        <td><input class="btn btn-primary" type="submit" value="Delete"></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
                     </div>
 
 
