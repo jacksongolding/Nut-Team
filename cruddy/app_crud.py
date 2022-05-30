@@ -105,6 +105,15 @@ def createCoolendar():
         po.create()
     return redirect(url_for('crud.calendar'))
 
+@app_crud.route('/deleteCoolendar/', methods=["POST"])
+def deleteCoolendar():
+    """gets userid from form delete corresponding record from Users table"""
+    if request.form:
+        day = request.form.get("day")
+        po = coolendar_by_day(day)
+        if po is not None:
+            po.delete()
+    return redirect(url_for('crud.calendar'))
 
 @app_crud.route('/calendar/')
 def calendar():

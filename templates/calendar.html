@@ -87,12 +87,12 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="p-5 mb-4 bg-dark text-white rounded-3">
+                    <div class="container bg-secondary py-4">
+                        <div class="p-5 mb-4 bg-light text-dark rounded-3">
                             <h2>Delete</h2>
                             <form method="POST" ID="delete" action={{url_for('crud.deleteCoolendar')}} >
                                 <table id="read_table">
-                                    <tr><th><label for="day">ID</label></th></tr>
+                                    <tr><th><label for="day">Delete Information from the Calendar</label></th></tr>
                                     <tr>
                                         <td>
                                             <select class="form-select" name="day" id="delete_day">

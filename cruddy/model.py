@@ -192,6 +192,11 @@ class coolendar(db.Model):
             "information": self.information
         }
 
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
+
 
 """Database Creation and Testing section"""
 
