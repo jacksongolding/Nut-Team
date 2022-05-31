@@ -1,4 +1,3 @@
-"""control dependencies to support CRUD app routes and APIs"""
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
 from flask_admin import Admin
