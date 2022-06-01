@@ -1,5 +1,7 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, url_for, redirect
 from cruddy.model import Events
+from flask_login import login_required
+from cruddy.query import *
 
 app_events = Blueprint('events', __name__,
                        url_prefix='/events',
@@ -17,8 +19,16 @@ def event_by_id(eventid):
 
 
 @app_events.route('/edit/')
+@login_required
 def edit():
-    return render_template("editevents.html", table=events_all())
+    if not current_user.email:
+        return redirect(url_for('crud.crud_login'))
+    admin = "admin@admin.admin"
+    control = current_user.email
+    if control == admin:
+        return render_template("editevents.html", table=events_all())
+    else:
+        return redirect(url_for('crud.crud_login'))
 
 @app_events.route('/create/', methods=["POST"])
 def create():
