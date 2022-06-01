@@ -17,6 +17,53 @@
             <span class="fs-4">SQL CRUD Admin Page</span>
         </header>
     </div>
+    <div class="container bg-secondary py-4">
+        <div class="p-5 mb-4 bg-light text-dark rounded-3">
+            <h2>Add Information to the Calendar</h2>
+            <form method="POST" ID="create" action={{url_for('crud.createCoolendar')}} >
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th><label for="day">Day</label></th>
+                        <th><label for="information">Information</label></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input type="text" name="day" id="day" required></td>
+                        <td><input type="text" name="information" id="information" required></td>
+                        <td><input type="submit" value="Create"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p id="pswError"></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="container bg-secondary py-4">
+        <div class="p-5 mb-4 bg-light text-dark rounded-3">
+            <h2>Delete</h2>
+            <form method="POST" ID="delete" action={{url_for('crud.deleteCoolendar')}} >
+                <table id="read_table">
+                    <tr><th><label for="day">Delete Information from the Calendar</label></th></tr>
+                    <tr>
+                        <td>
+                            <select class="form-select" name="day" id="delete_day">
+                                <optgroup label="day">
+                                    {% for row in table %}
+                                        <option label="{{ row['day'] }}">{{ row['day'] }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                            </select>
+                        </td>
+                        <td><input class="btn btn-primary" type="submit" value="Delete"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
     <div class="container py-4 text-light bg-success">
 
         <div class="container bg-secondary py-4">
