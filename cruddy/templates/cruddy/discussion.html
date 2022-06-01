@@ -12,7 +12,7 @@
             font-size: 200%;
         }
         .postbutton {
-            margin-right: 30px;
+            margin-right: 50px;
             background-color: #ffffff;
             color: #000000;
             padding: 7px 15px;
@@ -26,6 +26,10 @@
         }
         .postbutton:hover {
             background-color: rgb(206, 203, 203)
+        }
+        .name {
+            width: 30%;
+            margin-left: 20px;
         }
 
     </style>
@@ -42,7 +46,7 @@
                     <tbody>
                     <tr>
                         <td><textarea rows = "5" cols = "100%" name = "posts" id="posts" required></textarea></td>
-                        <td><input type="submit" value="Post" class="postbutton"></td>
+                        <td><input type="submit" value="Post" id="user_object" class="postbutton"></td>
                     </tr>
                     </tbody>
                 </table>
@@ -50,10 +54,17 @@
 
             <div class="table-responsive">
                 <table class="table">
+                    <thead>
+                    <tr>
+                        <th style="font-size:130%"><label for="uname">Username</label> </th>
+                        <th style="font-size:130%"><label for="tpost">Post</label> </th>
+                    </tr>
+                    </thead>
                     <tbody>
                     {% for post in table %}
                         <tr>
-                            <td class="post">{{ post['post'] }}</td>
+                            <td class="name" name="uname"> {{ post.name }} </td>
+                            <td class="post" name="tpost">{{ post['post'] }}</td>
                         </tr>
                     {% endfor %}
                     </tbody>

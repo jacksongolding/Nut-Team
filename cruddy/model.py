@@ -6,7 +6,7 @@ from random import randrange
 from __init__ import db
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import UserMixin
+from flask_login import UserMixin, current_user
 
 
 # Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
@@ -21,12 +21,14 @@ class Discussion(db.Model):
 
     uid = db.Column(db.Integer, primary_key=True)
     post = db.Column(db.Text, unique=False, nullable=False)
+    uname = db.Column(db.Text, unique=False, nullable=False)
 
-    def __init__(self, post):
+    def __init__(self, post, uname):
+        self.uname = uname
         self.post = post
 
     def __repr__(self):
-        return "Posts(" + str(self.uid) + "," + self.post + ",)"
+        return "Posts(" + str(self.uid) + "," + self.post + "," + self.uname + ",)"
 
     def create(self):
         try:
@@ -42,6 +44,7 @@ class Discussion(db.Model):
         return {
             "User ID": self.uid,
             "post": self.post,
+            "name": self.uname,
         }
 
 class Notes(db.Model):
@@ -85,7 +88,11 @@ class Notes(db.Model):
         }
 
 
-
+ACCESS = {
+    'guest': 0,
+    'user': 1,
+    'admin': 2
+}
 
 class Users(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -95,14 +102,22 @@ class Users(UserMixin, db.Model):
     email = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), unique=False, nullable=False)
     phone = db.Column(db.String(255), unique=False, nullable=False)
+    access = db.Column(db.String(255), unique=False, nullable=False)
     notes = db.relationship("Notes", cascade='all, delete', backref='users', lazy=True)
 
     # constructor of a User object, initializes of instance variables within object
-    def __init__(self, name, email, password, phone):
+    def __init__(self, name, email, password, phone, access=ACCESS['user']):
         self.name = name
         self.email = email
         self.set_password(password)
         self.phone = phone
+        self.access = access
+
+    def is_admin(self):
+        return self.access == ACCESS['admin']
+
+    def allowed(self, access_level):
+        return self.access >= access_level
 
     # CRUD create/add a new record to the table
     # returns self or None on error
@@ -202,15 +217,16 @@ def model_builder():
     print("--------------------------")
     db.create_all()
     """Tester data for table"""
-    u1 = Users(name='Thomas Edison', email='tedison@example.com', password='123toby', phone="1111111111")
-    u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='123niko', phone="1111112222")
-    u3 = Users(name='Alexander Graham Bell', email='agbell@example.com', password='123lex', phone="1111113333")
-    u4 = Users(name='Eli Whitney', email='eliw@example.com', password='123whit', phone="1111114444")
-    u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956")
-    u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956")
+    u1 = Users(name='Thomas Edison', email='tedison@example.com', password='123toby', phone="1111111111", access="1")
+    u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='123niko', phone="1111112222", access="1")
+    u3 = Users(name='Alexander Graham Bell', email='agbell@example.com', password='123lex', phone="1111113333", access="1")
+    u4 = Users(name='Eli Whitney', email='eliw@example.com', password='123whit', phone="1111114444", access="1")
+    u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956", access="1")
+    u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956", access="1")
     # U7 intended to fail as duplicate key
-    u7 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8586791294")
-    table = [u1, u2, u3, u4, u5, u6, u7]
+    u7 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8586791294", access="1")
+    u8 = Users(name='admin', email='admin@admin.admin', password='password', phone="1", access="2")
+    table = [u1, u2, u3, u4, u5, u6, u7, u8]
     for row in table:
         try:
             '''add a few 1 to 4 notes per user'''
@@ -224,9 +240,6 @@ def model_builder():
             '''fails with bad or duplicate data'''
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {row.email}")
-
-
-
 
 def model_driver():
     print("---------------------------")
@@ -253,9 +266,6 @@ def model_driver():
             print(note.read())
         print("-" * 85)
         print()
-
-
-
 
 class Events(db.Model):
     eventID = db.Column(db.Integer, primary_key=True)
@@ -292,8 +302,6 @@ class Events(db.Model):
         db.session.commit()
         return None
 
-
-
 def model_testerr():
     print("--------------------------")
     print("Seed Data for Table: coolendar")
@@ -326,12 +334,13 @@ def discussion_tester():
     print("Seed Data for Table: discussion")
     print("--------------------------")
     db.create_all()
-    p1 = Discussion(post='hi')
-    p2 = Discussion(post='bye')
-    table = [p1, p2]
+    # p1 = Discussion(post='hi',uname=current_user.name)
+    # p2 = Discussion(post='bye',uname=current_user.name)
+    #
+    # table = [p1, p2]
     # for row in table:
     #     try:
-    #         db.session.remove(row)
+    #         db.session.add(row)
     #         db.session.commit()
     #     except IntegrityError:
     #         db.session.remove()

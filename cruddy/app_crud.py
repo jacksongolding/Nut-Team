@@ -1,8 +1,9 @@
 """control dependencies to support CRUD app routes and APIs"""
-from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
-from flask_login import login_required
+import markdown
+from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response, session
+from flask_login import login_required, current_user
 from flask_admin import Admin
-from cruddy.model import coolendar, model_printerr, Discussion
+from cruddy.model import coolendar, model_printerr, Discussion, Notes
 from cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
@@ -102,6 +103,12 @@ def createCoolendar():
 
 @app_crud.route('/calendar/')
 def calendar():
+    if not session.get('email'):
+        return redirect(url_for('crud.crud_login'))
+    user = Users.find_by_email(session['email'])
+    if not user.is_admin():
+        return redirect(url_for("crud.crud_login"))
+
     return render_template("calendar.html", table=calendar_all())
 
 @app_crud.route('/crudcalendar/')
@@ -152,22 +159,13 @@ def calendar_all():
     return json_ready
 
 
-# Search request and response
-@app_crud.route('/search/term/', methods=["POST"])
-def search_term():
-    """ obtain term/search request """
-    req = request.get_json()
-    term = req['term']
-    response = make_response(jsonify(users_ilike(term)), 200)
-    return response
-
-
 @app_crud.route('/discussioncreate/', methods=["POST"])
 def discussioncreate():
     """gets data from form and add it to Users table"""
     if request.form:
         do = Discussion(
-            request.form.get("posts")
+            request.form.get("posts"),
+            current_user.name
         )
         do.create()
     return redirect(url_for('crud.discussion'))
@@ -175,7 +173,17 @@ def discussioncreate():
 @app_crud.route('/discussion/')
 @login_required
 def discussion():
-    return render_template("discussion.html", table=discussion_all())
+    user = ""
+    uo = user_by_id(current_user.userID)
+
+    # if user object is found
+    if uo is not None:
+        user = uo.read()  # extract user record (Dictionary)
+        for note in uo.notes:  # loop through each user note
+            note = note.read()  # extract note record (Dictionary)
+            note['note'] = markdown.markdown(note['note'])  # convert markdown to html
+    # render user and note data in reverse chronological order
+    return render_template("discussion.html", table=discussion_all(), user=user)
 
 
 def discussion_all():
