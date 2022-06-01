@@ -45,6 +45,10 @@ def create():
         note_object = Notes(
             request.form.get("notes"), current_user.userID
         )
+        unit_object = Notes(
+            request.form.get("unit")
+        )
         # create a record in the Notes table with the Notes object
         note_object.create()
+        unit_object.create()
     return redirect(url_for('notes.notes'))

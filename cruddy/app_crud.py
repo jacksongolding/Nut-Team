@@ -111,13 +111,9 @@ def deleteCoolendar():
     return redirect(url_for('crud.calendar'))
 
 @app_crud.route('/calendar/')
+@login_required
 def calendar():
-    admin = "admin@admin.admin"
-    control = current_user.email
-    if control == admin:
         return render_template("calendar.html", table=calendar_all())
-    else:
-        return redirect(url_for('crud.crud_login'))
 
 
 
@@ -125,8 +121,17 @@ def calendar():
 
 
 @app_crud.route('/crudcalendar/')
+@login_required
 def crudCalendar():
-    return render_template("crudCalendar.html", table=calendar_all())
+    if not current_user.email:
+        return redirect(url_for('crud.crud_login'))
+    admin = "admin@admin.admin"
+    control = current_user.email
+    if control == admin:
+        return render_template("crudCalendar.html", table=calendar_all())
+    else:
+        return redirect(url_for('crud.crud_login'))
+
 
 # CRUD read
 @app_crud.route('/read/', methods=["POST"])
