@@ -2,7 +2,6 @@
 import markdown
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response, session
 from flask_login import login_required, current_user, login_user
-from flask_admin import Admin
 from cruddy.model import coolendar, model_printerr, Discussion, Notes
 from cruddy.query import *
 
@@ -98,7 +97,7 @@ def createCoolendar():
             request.form.get("information")
         )
         po.create()
-    return redirect(url_for('crud.calendar'))
+    return redirect(url_for('crud.crudCalendar'))
 
 @app_crud.route('/deleteCoolendar/', methods=["POST"])
 def deleteCoolendar():
@@ -108,7 +107,7 @@ def deleteCoolendar():
         po = coolendar_by_day(day)
         if po is not None:
             po.delete()
-    return redirect(url_for('crud.calendar'))
+    return redirect(url_for('crud.crudCalendar'))
 
 @app_crud.route('/calendar/')
 @login_required
