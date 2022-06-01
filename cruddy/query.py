@@ -1,5 +1,5 @@
 from __init__ import login_manager, db
-from cruddy.model import Users
+from cruddy.model import Users, coolendar
 from flask_login import current_user, login_user, logout_user
 
 
@@ -55,6 +55,10 @@ def users_ilike(term):
 def user_by_id(userid):
     """finds User in table matching userid """
     return Users.query.filter_by(userID=userid).first()
+
+def coolendar_by_day(day):
+    """finds User in table matching userid """
+    return coolendar.query.filter_by(day=day).first()
 
 
 # SQLAlchemy extract single user from database matching email

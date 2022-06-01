@@ -207,6 +207,11 @@ class coolendar(db.Model):
             "information": self.information
         }
 
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
+
 
 """Database Creation and Testing section"""
 
@@ -302,6 +307,21 @@ class Events(db.Model):
         db.session.commit()
         return None
 
+    def read(self):
+        return {
+            "eventID": self.eventID,
+            "date": self.date,
+            "name": self.name,
+            "description": self.description,
+        }
+
+
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
+
 def model_testerr():
     print("--------------------------")
     print("Seed Data for Table: coolendar")
@@ -312,7 +332,7 @@ def model_testerr():
     u2 = coolendar(day='18', information='Chapters 28 and 29 homework due', )
     u3 = Events(name="Civil War", date="Apr 12, 1861 – Apr 9, 1865", description="the war that was civil")
 
-    table = [u1, u2]
+    table = [u1, u2, u3]
     for row in table:
         try:
             db.session.add(row)

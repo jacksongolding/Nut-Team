@@ -5,11 +5,15 @@ import json
 from cruddy.app_crud import app_crud
 from __init__ import app
 from notey.app_notes import app_notes
+from discussion.app_discussion import app_discussion
 from cruddy.model import Users, coolendar, model_printerr
 from cruddy.query import users_all
+from cruddy.eventroutes import events_all, app_events
 
 app.register_blueprint(app_crud)
 app.register_blueprint(app_notes)
+app.register_blueprint(app_discussion)
+app.register_blueprint(app_events)
 
 
 # create a Flask instance
@@ -53,7 +57,8 @@ def test():
 
 @app.route('/importantevents/')
 def importantevents():
-    return render_template("importantevents.html")
+    table = events_all()
+    return render_template("importantevents.html", table=table)
 
 
 
