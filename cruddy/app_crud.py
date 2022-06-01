@@ -1,7 +1,7 @@
 """control dependencies to support CRUD app routes and APIs"""
 import markdown
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response, session
-from flask_login import login_required, current_user
+from flask_login import login_required, current_user, login_user
 from flask_admin import Admin
 from cruddy.model import coolendar, model_printerr, Discussion, Notes
 from cruddy.query import *
@@ -112,13 +112,17 @@ def deleteCoolendar():
 
 @app_crud.route('/calendar/')
 def calendar():
-    if not session.get('email'):
+    admin = "admin@admin.admin"
+    control = current_user.email
+    if control == admin:
+        return render_template("calendar.html", table=calendar_all())
+    else:
         return redirect(url_for('crud.crud_login'))
-    user = Users.find_by_email(session['email'])
-    if not user.is_admin():
-        return redirect(url_for("crud.crud_login"))
 
-    return render_template("calendar.html", table=calendar_all())
+
+
+
+
 
 @app_crud.route('/crudcalendar/')
 def crudCalendar():

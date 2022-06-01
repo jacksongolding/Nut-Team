@@ -88,11 +88,11 @@ class Notes(db.Model):
         }
 
 
-ACCESS = {
-    'guest': 0,
-    'user': 1,
-    'admin': 2
-}
+# ACCESS = {
+#     'guest': 0,
+#     'user': 1,
+#     'admin': 2
+# }
 
 class Users(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -102,22 +102,22 @@ class Users(UserMixin, db.Model):
     email = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), unique=False, nullable=False)
     phone = db.Column(db.String(255), unique=False, nullable=False)
-    access = db.Column(db.String(255), unique=False, nullable=False)
+    # roles = db.relationship('Role', secondary='user_roles')
     notes = db.relationship("Notes", cascade='all, delete', backref='users', lazy=True)
 
     # constructor of a User object, initializes of instance variables within object
-    def __init__(self, name, email, password, phone, access=ACCESS['user']):
+    def __init__(self, name, email, password, phone):
         self.name = name
         self.email = email
         self.set_password(password)
         self.phone = phone
-        self.access = access
 
-    def is_admin(self):
-        return self.access == ACCESS['admin']
 
-    def allowed(self, access_level):
-        return self.access >= access_level
+    # def is_admin(self):
+    #     return self.access == ACCESS['admin']
+    #
+    # def allowed(self, access_level):
+    #     return self.access >= access_level
 
     # CRUD create/add a new record to the table
     # returns self or None on error
@@ -178,6 +178,19 @@ class Users(UserMixin, db.Model):
     def get_id(self):
         return self.userID
 
+
+#
+# class Role(db.Model):
+#     __tablename__ = 'roles'
+#     id = db.Column(db.Integer(), primary_key=True)
+#     name = db.Column(db.String(50), unique=True)
+#
+# class Userroles(db.Model):
+#     __tablename__ = 'user_roles'
+#     id = db.Column(db.Integer, primary_key=True)
+#     user_id = db.Column(db.Integer(), db.ForeignKey('users.id', ondelete='CASCADE'))
+#     role_id = db.Column(db.Integer(), db.ForeignKey('roles.id', ondelete='CASCADE'))
+
 class coolendar(db.Model):
     __tablename__ = 'coolendar'
 
@@ -222,16 +235,20 @@ def model_builder():
     print("--------------------------")
     db.create_all()
     """Tester data for table"""
-    u1 = Users(name='Thomas Edison', email='tedison@example.com', password='123toby', phone="1111111111", access="1")
-    u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='123niko', phone="1111112222", access="1")
-    u3 = Users(name='Alexander Graham Bell', email='agbell@example.com', password='123lex', phone="1111113333", access="1")
-    u4 = Users(name='Eli Whitney', email='eliw@example.com', password='123whit', phone="1111114444", access="1")
-    u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956", access="1")
-    u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956", access="1")
+    u1 = Users(name='Thomas Edison', email='tedison@example.com', password='123toby', phone="1111111111")
+    u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='123niko', phone="1111112222")
+    u3 = Users(name='Alexander Graham Bell', email='agbell@example.com', password='123lex', phone="1111113333")
+    u4 = Users(name='Eli Whitney', email='eliw@example.com', password='123whit', phone="1111114444")
+    u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956")
+    u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956")
     # U7 intended to fail as duplicate key
-    u7 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8586791294", access="1")
-    u8 = Users(name='admin', email='admin@admin.admin', password='password', phone="1", access="2")
+    u7 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8586791294")
+    u8 = Users(name='admin', email='admin@admin.admin', password='password', phone="1")
     table = [u1, u2, u3, u4, u5, u6, u7, u8]
+    # admin_role = Role(name='Admin')
+    # db.session.commit()
+    # u8.roles = [admin_role,]
+    # db.session.commit()
     for row in table:
         try:
             '''add a few 1 to 4 notes per user'''
