@@ -27,5 +27,17 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="myDB [2]" uuid="3a630a82-412b-4725-a4e4-1765c96f1bd2">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\wangz\IdeaProjects\Nut-TeamREAL\myDB</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.36.0.3/sqlite-jdbc-3.36.0.3.jar</url>
+        </library>
+      </libraries>
+    </data-source>
   </component>
 </project>

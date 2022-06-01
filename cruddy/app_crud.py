@@ -1,5 +1,8 @@
 """control dependencies to support CRUD app routes and APIs"""
+import json
+
 import markdown
+import requests
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response, session
 from flask_login import login_required, current_user, login_user
 from cruddy.model import coolendar, model_printerr, Discussion, Notes
@@ -112,12 +115,16 @@ def deleteCoolendar():
 @app_crud.route('/calendar/')
 @login_required
 def calendar():
-        return render_template("calendar.html", table=calendar_all())
+    url = "https://world-clock.p.rapidapi.com/json/utc/now"
 
+    headers = {
+        "X-RapidAPI-Host": "world-clock.p.rapidapi.com",
+        "X-RapidAPI-Key": "befd3aa94cmsh6c15f9448db64f3p194824jsn7727f7079e12"
+    }
 
-
-
-
+    response = requests.request("GET", url, headers=headers)
+    output = json.loads(response.text)
+    return render_template("calendar.html", table=calendar_all(), date=output)
 
 @app_crud.route('/crudcalendar/')
 @login_required

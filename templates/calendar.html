@@ -18,51 +18,53 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
-<html>
-    <body style="background-color:#96eede;">
-    <div class="centerb">
-        <center>
+    <html>
+        <body style="background-color:#96eede;">
+        <div class="centerb">
+            <center>
 
-            <div class="centerb">
-<br>
-<br>
+                <div class="centerb">
+    <br>
+    <br>
 
-    <marquee behavior="alternate" direction="left" scrollamount = "12">
-        <h1 style="font-family: 'Comic Sans MS'"> Jun 1 2022</h1>
-    </marquee>
-<br>
-<br>
-<br>
-                <h1 class="w3-text-blue" style="text-shadow:1px 1px 0 #444">
-                    <b>AP US History Calendar</b></h1>
-            </div>
-<br>
+        <marquee behavior="alternate" direction="left" scrollamount = "12">
+            <h1 style="font-family: 'Comic Sans MS'", >{{ date["currentDateTime"] }}</h1>
+        </marquee>
+    <br>
+    <br>
+    <br>
+                    <h1 class="w3-text-blue" style="text-shadow:1px 1px 0 #444">
+                        <b>AP US History Calendar</b></h1>
+                </div>
+    <br>
 
-            <table id="calendar" style="padding-bottom: 20px; margin-left:20px;margin-right:20px;">
-                {% block links %}
-                <tr>
-                {% for num in range(1, 32, 1) %}
-                    <td class="days" id="calendar{{ num }}" style="border: 2px solid black; height: 200px; width: 200px"><div>{{ num }}
-                    {% for row in table %}
-                        {% if row.day == num %}
-                            <br>{{ row['information'] }}
-                        {% endif %}
-                    {% endfor %}
-                    </div></td>
-                {% if num % 7 == 0 %}
-                </tr>
-                <tr>
-                {% endif %}
-                {% endfor %}
-                {% endblock %}
+                <table id="calendar" style="padding-bottom: 20px; margin-left:20px;margin-right:20px;">
+                    {% block links %}
+                    <tr>
+                    {% for num in range(1, 32, 1) %}
+                        <td class="days" id="calendar{{ num }}" style="border: 2px solid black; height: 200px; width: 200px"><div>{{ num }}
+                        {% for row in table %}
+                            {% if row.day == num %}
+                                <br>{{ row['information'] }}
+                            {% endif %}
+                        {% endfor %}
+                        </div></td>
+                    {% if num % 7 == 0 %}
                     </tr>
+                    <tr>
+                    {% endif %}
+                    {% endfor %}
+                    {% endblock %}
+                        </tr>
 
 
-                        </table>
+                            </table>
 
-                        </center>
+                            </center>
 
-                        </div>
+                            </div>
+        </body>
+    </html>
 
 
 
