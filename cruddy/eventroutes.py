@@ -34,8 +34,8 @@ def edit():
 def create():
     if request.form:
         po=Events(
-            request.form.get("date"),
             request.form.get("name"),
+            request.form.get("date"),
             request.form.get("description")
         )
         po.create()
