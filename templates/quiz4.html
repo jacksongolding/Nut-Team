@@ -1,0 +1,254 @@
+
+{% block body %}
+
+
+
+<style>
+    *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: ".AppleSystemUIFont";
+    }
+
+    :root {
+        --hue-neutral: 200;
+        --hue-wrong: 0;
+        --hue-correct: 145;
+    }
+
+    body {
+        --hue: var(--hue-neutral);
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: #7fdbfc;
+        font-family: "Comic Sans MS";
+    }
+
+    body.correct {
+        --hue: var(--hue-correct);
+    }
+
+    body.wrong {
+        --hue: var(--hue-wrong);
+    }
+
+    .container {
+        width: 800px;
+        max-width: 80%;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        font-family: .AppleSystemUIFont;
+    }
+
+    .btn-grid {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 10px;
+        margin: 20px 0;
+        font-family: .AppleSystemUIFont;
+    }
+
+    .btn {
+        --hue: var(--hue-neutral);
+        border: 1px solid hsl(var(--hue), 100%, 30%);
+        background-color: hsl(var(--hue), 100%, 50%);
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: white;
+        outline: none;
+        font-family: .AppleSystemUIFont;
+    }
+
+    .btn:hover {
+        border-color: black;
+    }
+
+    .btn.correct {
+        --hue: var(--hue-correct);
+        color: black;
+    }
+
+    .btn.wrong {
+        --hue: var(--hue-wrong);
+    }
+
+    .start-btn, .next-btn {
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px 20px;
+    }
+
+    .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hide {
+        display: none;
+    }
+
+</style>
+
+
+<center>
+
+    <h1 style="text-align:center" style ="background-color: white";>APUSH Chapters 31 - 40 Quiz</h1>
+    &nbsp;&nbsp;
+
+    &nbsp;&nbsp;
+    <br>
+
+
+    <body>
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+    </div>
+    </body>
+    </html>
+    <br>
+    <br>
+    <a class="button" href="http://127.0.0.1:5000/quizhome">Click To Return to the Quiz Homepage</a>
+
+    <script>
+        const startButton = document.getElementById('start-btn')
+        const nextButton = document.getElementById('next-btn')
+        const questionContainerElement = document.getElementById('question-container')
+        const questionElement = document.getElementById('question')
+        const answerButtonsElement = document.getElementById('answer-buttons')
+
+        let shuffledQuestions, currentQuestionIndex
+
+        startButton.addEventListener('click', startGame)
+        nextButton.addEventListener('click', () => {
+            currentQuestionIndex++
+            setNextProblem()
+        })
+
+        function startGame() {
+            startButton.classList.add('hide')
+            shuffledQuestions = questions.sort(() => Math.random() - .5)
+            currentQuestionIndex = 0
+            questionContainerElement.classList.remove('hide')
+            setNextProblem()
+        }
+
+        function setNextProblem() {
+            resetState()
+            showQuestion(shuffledQuestions[currentQuestionIndex])
+        }
+
+        function showQuestion(question) {
+            questionElement.innerText = question.question
+            question.answers.forEach(answer => {
+                const button = document.createElement('button')
+                button.innerText = answer.text
+                button.classList.add('btn')
+                if (answer.correct) {
+                    button.dataset.correct = answer.correct
+                }
+                button.addEventListener('click', selectAnswer)
+                answerButtonsElement.appendChild(button)
+            })
+        }
+
+        function resetState() {
+            clearStatusClass(document.body)
+            nextButton.classList.add('hide')
+            while (answerButtonsElement.firstChild) {
+                answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+            }
+        }
+
+        function selectAnswer(e) {
+            const selectedButton = e.target
+            const correct = selectedButton.dataset.correct
+            setStatusClass(document.body, correct)
+            Array.from(answerButtonsElement.children).forEach(button => {
+                setStatusClass(button, button.dataset.correct)
+            })
+            if (shuffledQuestions.length > currentQuestionIndex + 1) {
+                nextButton.classList.remove('hide')
+            } else {
+                startButton.innerText = 'Restart'
+                startButton.classList.remove('hide')
+            }
+        }
+
+        function setStatusClass(element, correct) {
+            clearStatusClass(element)
+            if (correct) {
+                element.classList.add('correct')
+            } else {
+                element.classList.add('wrong')
+            }
+        }
+
+        function clearStatusClass(element) {
+            element.classList.remove('correct')
+            element.classList.remove('wrong')
+        }
+
+        const questions = [
+            {
+                question: 'What is the Office of Price Administration?',
+                answers: [
+                    { text: 'WWII Office that installs price controls on essential items to prevent inflation', correct: true },
+                    { text: 'government agency that decided which companies would make war materials and how to distribute raw materials', correct: false },
+                    { text: 'Name for Japanese immigrants during the war who were not eligible for US citizenship b/c of their race', correct: false },
+                    { text: 'an illegal market in which goods or currencies are bought and sold in violation of rationing or controls', correct: false },
+                ]
+            },
+            {
+                question: 'Who was Chester Nimitz?',
+                answers: [
+                    { text: 'VP under Roosevelt, President when Truman died', correct: false },
+                    { text: 'leader of the Allied forces in Europe during WW2--leader of troops in Africa and commander in DDay invasion-elected president\n', correct: false },
+                    { text: 'British general who in an attack at El Alamein was able to drive the Germans away from the Suez Canal', correct: false },
+                    { text: 'United States admiral of the Pacific fleet during World War II who used aircraft carriers to destroy the Japanese navy in the Battle of Midway, successfully combined forces of air, land, and sea in battle', correct: true }
+                ]
+            },
+            {
+                question: 'What was the Battle of Midway?',
+                answers: [
+                    { text: 'nickname given for German General Erwin Rommel; led German forces through North Africa', correct: false },
+                    { text: 'agreement with Britain that adopted the strategy of "getting Germany first" then focusing on the Pacific', correct: false },
+                    { text: 'U.S. naval victory over the Japanese fleet in June 1942, in which the Japanese lost four of their best aircraft carriers. It marked a turning point in World War II', correct: true },
+                    { text: 'A battle between Japanese and American naval forces that stopped the Japanese advance on Australia', correct: false }
+                ]
+            },
+            {
+                question: 'What is D-Day?',
+                answers: [
+                    { text: 'Site of important battle near Japanese mainland; last battle before atomic bombs; Allies won', correct: false },
+                    { text: 'Town in Egypt, site of the victory by Britain\'s Field Marshal Bernard Montgomery over German forces led by General Erwin Rommel (the \'Desert Fox\') in 1942-1943.', correct: false },
+                    { text: 'June 6, 1944 - Led by Eisenhower, over a million troops (the largest invasion force in history) stormed the beaches at Normandy and began the process of re-taking France. The turning point of World War II.', correct: true },
+                    { text: 'last German offensive through the Ardennes forests in December 1944; Germans lost', correct: false },
+
+                ]
+            }
+        ]
+    </script>
+
+    {% endblock %}
+
+    {% block background %}
+    {% endblock %}
+

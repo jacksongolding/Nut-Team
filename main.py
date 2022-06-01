@@ -31,6 +31,10 @@ def quiz():
 def quiz3():
     return render_template("quiz3.html")
 
+@app.route('/quiz4/')
+def quiz4():
+    return render_template("quiz4.html")
+
 @app.route('/quizhome/')
 def quizhome():
     return render_template("quizhome.html")
