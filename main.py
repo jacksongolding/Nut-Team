@@ -26,6 +26,14 @@ def index():
 def quiz():
     return render_template("quiz.html")
 
+@app.route('/quiz2/')
+def quiz2():
+    return render_template("quiz2.html")
+
+@app.route('/quizhome/')
+def quizhome():
+    return render_template("quizhome.html")
+
 @app.route('/Results/')
 def Results():
     return render_template("Results.html")
