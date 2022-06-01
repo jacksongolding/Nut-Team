@@ -2,6 +2,13 @@
 
 {% block body %}
     <style>
+        html{
+            min-height:100%;
+            position: relative;
+        }
+        body {
+            height: 100%;
+        }
         .post {
             background-color: whitesmoke;
             font-family: DengXian;
@@ -33,7 +40,7 @@
         }
 
     </style>
-
+    <html>
     <body>
         <div>
             <form method="POST" ID="create" action={{url_for('crud.discussioncreate')}}>
@@ -73,4 +80,5 @@
 
         </div>
     </body>
+    </html>
 {% endblock %}
