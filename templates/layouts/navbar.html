@@ -59,7 +59,7 @@
         <div class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
             <a class="nav-link" href="/overview">Overview</a>
-            <a class="nav-link" href="/calendar">Calendar</a>
+            <a class="nav-link" href="/crud/calendar">Calendar</a>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
@@ -77,19 +77,6 @@
                         </ul>
                     </li>
 
-                </div>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">MiniLabs</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="/Bimary">Binary Mini-Lab</a></li>
-                                <li><a class="dropdown-item" href="/rgb">RGB Mini-Lab</a></li>
-                            </ul>
-                        </li>
-
-                    </div>
                 </div>
                 <div>
                     <a class = "buttonz" href = {{ url_for('crud.crud_login')}} style="color:black;">Log In</a>

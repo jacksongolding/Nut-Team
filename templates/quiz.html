@@ -1,74 +1,255 @@
-{% extends "layouts/base.html" %}
 
 {% block body %}
 
 
-    <style>
 
-        .centerb {
-            width: 1200px;
-            height: 700px;
-            padding: 10px;
-            margin: 60px auto;
-        }
+<style>
+    *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: ".AppleSystemUIFont";
+    }
 
-        table, th, td {
-            border:1px solid #4709ff;
-        }
+    :root {
+        --hue-neutral: 200;
+        --hue-wrong: 0;
+        --hue-correct: 145;
+    }
+
+    body {
+        --hue: var(--hue-neutral);
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: #b4f8e4;
+        font-family: "Comic Sans MS";
+    }
+
+    body.correct {
+        --hue: var(--hue-correct);
+    }
+
+    body.wrong {
+        --hue: var(--hue-wrong);
+    }
+
+    .container {
+        width: 800px;
+        max-width: 80%;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 0 10px 2px;
+        font-family: .AppleSystemUIFont;
+    }
+
+    .btn-grid {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 10px;
+        margin: 20px 0;
+        font-family: .AppleSystemUIFont;
+    }
+
+    .btn {
+        --hue: var(--hue-neutral);
+        border: 1px solid hsl(var(--hue), 100%, 30%);
+        background-color: hsl(var(--hue), 100%, 50%);
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: white;
+        outline: none;
+        font-family: .AppleSystemUIFont;
+    }
+
+    .btn:hover {
+        border-color: black;
+    }
+
+    .btn.correct {
+        --hue: var(--hue-correct);
+        color: black;
+    }
+
+    .btn.wrong {
+        --hue: var(--hue-wrong);
+    }
+
+    .start-btn, .next-btn {
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px 20px;
+    }
+
+    .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hide {
+        display: none;
+    }
+
+</style>
 
 
-        <style>
-         .p1 {
-             font-family: "Times New Roman", Times, serif;
-         }
+<center>
 
-        .p2 {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    <h1 style="text-align:center" style ="background-color: white";>APUSH Chapters 1 - 10 Quiz</h1>
+    &nbsp;&nbsp;
 
-        .p3 {
-            font-family: "Monaco", "Monaco", fantasy;
-        }
-
-        body {
-            background-color: #a4d2ee;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-    </style>
+    &nbsp;&nbsp;
+    <br>
 
 
-
-    <center>
     <body>
-    <div class="centerb">
-        <center>
-
-            <div class="center">
-                <h1 class="w3-text-black" style="text-shadow:1px 1px 0 #444">
-                    <b>QUIZ TEEHEE</b></h1>
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
             </div>
-            &nbsp;&nbsp;
-            &nbsp;&nbsp;
-            <p class = "p3" style="text-align:center;">Quiztime LOL</p>
-                &nbsp;&nbsp;
-                &nbsp;&nbsp;
-                <br>
-
-
-            <div>
-                <a class="button" href="http://127.0.0.1:5000/">Homepage</a>
-            </div>
-
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+    </div>
     </body>
+    </html>
+    <br>
+    <br>
+    <a class="button" href="http://127.0.0.1:5000/">Click To Return to the Quiz Homepage</a>
 
+    <script>
+        const startButton = document.getElementById('start-btn')
+        const nextButton = document.getElementById('next-btn')
+        const questionContainerElement = document.getElementById('question-container')
+        const questionElement = document.getElementById('question')
+        const answerButtonsElement = document.getElementById('answer-buttons')
 
-{% endblock %}
+        let shuffledQuestions, currentQuestionIndex
 
-{% block background %}
-{% endblock %}
+        startButton.addEventListener('click', startGame)
+        nextButton.addEventListener('click', () => {
+            currentQuestionIndex++
+            setNextProblem()
+        })
 
-</center>
+        function startGame() {
+            startButton.classList.add('hide')
+            shuffledQuestions = questions.sort(() => Math.random() - .5)
+            currentQuestionIndex = 0
+            questionContainerElement.classList.remove('hide')
+            setNextProblem()
+        }
 
+        function setNextProblem() {
+            resetState()
+            showQuestion(shuffledQuestions[currentQuestionIndex])
+        }
+
+        function showQuestion(question) {
+            questionElement.innerText = question.question
+            question.answers.forEach(answer => {
+                const button = document.createElement('button')
+                button.innerText = answer.text
+                button.classList.add('btn')
+                if (answer.correct) {
+                    button.dataset.correct = answer.correct
+                }
+                button.addEventListener('click', selectAnswer)
+                answerButtonsElement.appendChild(button)
+            })
+        }
+
+        function resetState() {
+            clearStatusClass(document.body)
+            nextButton.classList.add('hide')
+            while (answerButtonsElement.firstChild) {
+                answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+            }
+        }
+
+        function selectAnswer(e) {
+            const selectedButton = e.target
+            const correct = selectedButton.dataset.correct
+            setStatusClass(document.body, correct)
+            Array.from(answerButtonsElement.children).forEach(button => {
+                setStatusClass(button, button.dataset.correct)
+            })
+            if (shuffledQuestions.length > currentQuestionIndex + 1) {
+                nextButton.classList.remove('hide')
+            } else {
+                startButton.innerText = 'Restart'
+                startButton.classList.remove('hide')
+            }
+        }
+
+        function setStatusClass(element, correct) {
+            clearStatusClass(element)
+            if (correct) {
+                element.classList.add('correct')
+            } else {
+                element.classList.add('wrong')
+            }
+        }
+
+        function clearStatusClass(element) {
+            element.classList.remove('correct')
+            element.classList.remove('wrong')
+        }
+
+        const questions = [
+            {
+                question: 'What is the Neolithic Revolution',
+                answers: [
+                    { text: 'The American Movement for independence', correct: false },
+                    { text: 'Transition from  hunting to farming', correct: true },
+                    { text: 'The French Movement for independence', correct: false },
+                    { text: 'The Revolt of the Sumerians against the Mesopotamians', correct: false },
+                ]
+            },
+            {
+                question: 'What is the treaty of Tordesillas?',
+                answers: [
+                    { text: 'A treaty that allowed Portuguese claim to the route around Africa', correct: true },
+                    { text: 'A treaty that ended the battle of Bull-Run', correct: false },
+                    { text: 'A treaty that allowed America to separate from Great Britain', correct: false },
+                    { text: 'A Treaty that created the United Nations', correct: false }
+                ]
+            },
+            {
+                question: 'What is the Ecomienda System?',
+                answers: [
+                    { text: 'A system of trade and barter in Southern Carolina', correct: false },
+                    { text: 'A Feudalistic system that granted Spanish colonists control of conquered lands.', correct: true },
+                    { text: 'A system of trade and barter in Northern Louisiana', correct: false },
+                    { text: 'A system of the provision of food to the native Texans.', correct: false }
+                ]
+            },
+            {
+                question: 'Who is John Cabot',
+                answers: [
+                    { text: 'The President of Portugal from 1876 to 1880', correct: false },
+                    { text: 'The President of Panama from 1876 to 1881', correct: false },
+                    { text: 'An Italian Explorer who led the English Expedition', correct: true },
+                    { text: 'An Italian Explorer who discovered Morocco', correct: false },
+
+                ]
+            }
+        ]
+    </script>
+
+    {% endblock %}
+
+    {% block background %}
+    {% endblock %}
 

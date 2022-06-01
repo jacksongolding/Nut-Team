@@ -1,4 +1,3 @@
-"""control dependencies to support CRUD app routes and APIs"""
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
 from flask_admin import Admin
@@ -105,6 +104,15 @@ def createCoolendar():
         po.create()
     return redirect(url_for('crud.calendar'))
 
+@app_crud.route('/deleteCoolendar/', methods=["POST"])
+def deleteCoolendar():
+    """gets userid from form delete corresponding record from Users table"""
+    if request.form:
+        day = request.form.get("day")
+        po = coolendar_by_day(day)
+        if po is not None:
+            po.delete()
+    return redirect(url_for('crud.calendar'))
 
 @app_crud.route('/calendar/')
 def calendar():
