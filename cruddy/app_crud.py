@@ -26,11 +26,6 @@ def crud():
     """obtains all Users from table and loads Admin Form"""
     return render_template("crud.html", table=users_all())
 
-@app_crud.route('/discussion/')
-@login_required  # Flask-Login uses this decorator to restrict access to logged in users
-def discussion():
-    """obtains all Users from table and loads Admin Form"""
-    return render_template("discussion.html", table=users_all())
 
 @app_crud.route('/logout')
 @login_required
@@ -187,17 +182,7 @@ def discussioncreate():
 @app_crud.route('/discussion/')
 @login_required
 def discussion():
-    user = ""
-    uo = user_by_id(current_user.userID)
-
-    # if user object is found
-    if uo is not None:
-        user = uo.read()  # extract user record (Dictionary)
-        for note in uo.notes:  # loop through each user note
-            note = note.read()  # extract note record (Dictionary)
-            note['note'] = markdown.markdown(note['note'])  # convert markdown to html
-    # render user and note data in reverse chronological order
-    return render_template("discussion.html", table=discussion_all(), user=user)
+    return render_template("discussion.html", table=discussion_all())
 
 
 def discussion_all():
